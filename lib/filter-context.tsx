@@ -48,7 +48,7 @@ const initialState: AppState = {
     districts: true,
     transmission: false,
     minigrids: false,
-    settlements: true,
+    settlements: false,
     projects: true,
   },
 };
