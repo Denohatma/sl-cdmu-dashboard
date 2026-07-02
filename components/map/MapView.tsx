@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, useMemo } from "react";
+import { memo, useCallback, useEffect, useRef, useState, useMemo } from "react";
 import {
   MapContainer,
   TileLayer,
@@ -181,7 +181,7 @@ function createProjectIcon(type: string) {
   });
 }
 
-function ProjectMarkers() {
+const ProjectMarkers = memo(function ProjectMarkers() {
   const mappableProjects = projects.filter((p) => p.gps && p.gps.lat && p.gps.lng);
 
   return (
@@ -224,9 +224,10 @@ function ProjectMarkers() {
       ))}
     </>
   );
-}
+});
+ProjectMarkers.displayName = "ProjectMarkers";
 
-function SettlementMarkers({
+const SettlementMarkers = memo(function SettlementMarkers({
   features,
   colorAttribute,
   filters,
@@ -287,7 +288,8 @@ function SettlementMarkers({
       })}
     </>
   );
-}
+});
+SettlementMarkers.displayName = "SettlementMarkers";
 
 export default function MapView() {
   const { state, dispatch } = useAppState();
@@ -322,10 +324,11 @@ export default function MapView() {
         setSelectedDetail(detailCache[id]);
       } else {
         try {
-          const res = await fetch("/data/settlements-detail.json");
-          const allDetails = await res.json();
-          setDetailCache(allDetails);
-          setSelectedDetail(allDetails[id] || null);
+          const res = await fetch(`/api/settlement?id=${encodeURIComponent(id)}`);
+          if (!res.ok) { setSelectedDetail(null); return; }
+          const detail = await res.json();
+          setDetailCache((prev) => ({ ...prev, [id]: detail }));
+          setSelectedDetail(detail);
         } catch {
           setSelectedDetail(null);
         }
@@ -363,6 +366,7 @@ export default function MapView() {
         maxBounds={SL_BOUNDS}
         minZoom={7}
         maxZoom={16}
+        preferCanvas={true}
         style={{ width: "100%", height: "100%" }}
         className="z-0"
       >

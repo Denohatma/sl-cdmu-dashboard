@@ -1,5 +1,7 @@
 "use client";
 
+import { memo } from "react";
+
 interface SectorData {
   sector: string;
   public: number;
@@ -89,7 +91,7 @@ interface InvestmentData {
   by_partner: PartnerData[];
 }
 
-export default function InvestmentChart({ data }: { data: InvestmentData }) {
+export default memo(function InvestmentChart({ data }: { data: InvestmentData }) {
   const maxSectorTotal = Math.max(...data.by_sector.map((s) => s.total));
   const maxPartnerCommitted = Math.max(...data.by_partner.map((p) => p.committed));
   const totalDisbursed = data.by_partner.reduce((sum, p) => sum + p.disbursed, 0);
@@ -143,7 +145,7 @@ export default function InvestmentChart({ data }: { data: InvestmentData }) {
           </p>
         </div>
         <div className="space-y-3">
-          {data.by_partner
+          {[...data.by_partner]
             .sort((a, b) => b.committed - a.committed)
             .map((partner) => (
               <PartnerBar
@@ -156,4 +158,4 @@ export default function InvestmentChart({ data }: { data: InvestmentData }) {
       </div>
     </div>
   );
-}
+});

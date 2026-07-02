@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import type { KPI } from "@/lib/types";
 
 function formatValue(value: number, unit: string): string {
@@ -169,7 +170,7 @@ function KPICard({ kpi }: { kpi: KPI }) {
   );
 }
 
-export default function KPIScorecard({ kpis }: { kpis: KPI[] }) {
+export default memo(function KPIScorecard({ kpis }: { kpis: KPI[] }) {
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-3">
@@ -185,4 +186,4 @@ export default function KPIScorecard({ kpis }: { kpis: KPI[] }) {
       </div>
     </div>
   );
-}
+});

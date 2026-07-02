@@ -1,19 +1,20 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, Suspense } from "react";
 import dynamic from "next/dynamic";
 import { AppProvider } from "@/lib/filter-context";
 import SplitPanel from "@/components/layout/SplitPanel";
 import KPIScorecard from "@/components/dashboard/KPIScorecard";
-import PillarTracker from "@/components/dashboard/PillarTracker";
 import InvestmentChart from "@/components/dashboard/InvestmentChart";
-import ProjectPipeline from "@/components/dashboard/ProjectPipeline";
-import SectorMetrics from "@/components/dashboard/SectorMetrics";
-import MilestoneTimeline from "@/components/dashboard/MilestoneTimeline";
-import AboutCompact from "@/components/dashboard/AboutCompact";
-import Resources from "@/components/dashboard/Resources";
-import DistrictProjects from "@/components/dashboard/DistrictProjects";
-import SaloneChat from "@/components/chatbot/SaloneChat";
+
+const PillarTracker = dynamic(() => import("@/components/dashboard/PillarTracker"));
+const ProjectPipeline = dynamic(() => import("@/components/dashboard/ProjectPipeline"));
+const SectorMetrics = dynamic(() => import("@/components/dashboard/SectorMetrics"));
+const MilestoneTimeline = dynamic(() => import("@/components/dashboard/MilestoneTimeline"));
+const AboutCompact = dynamic(() => import("@/components/dashboard/AboutCompact"));
+const Resources = dynamic(() => import("@/components/dashboard/Resources"));
+const DistrictProjects = dynamic(() => import("@/components/dashboard/DistrictProjects"));
+const SaloneChat = dynamic(() => import("@/components/chatbot/SaloneChat"), { ssr: false });
 
 import kpisRaw from "@/data/kpis.json";
 import pillarsRaw from "@/data/pillars.json";
