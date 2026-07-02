@@ -9,7 +9,7 @@ import InvestmentChart from "@/components/dashboard/InvestmentChart";
 
 const PillarTracker = dynamic(() => import("@/components/dashboard/PillarTracker"));
 const ProjectPipeline = dynamic(() => import("@/components/dashboard/ProjectPipeline"));
-const SectorMetrics = dynamic(() => import("@/components/dashboard/SectorMetrics"));
+const MonitoringEvaluation = dynamic(() => import("@/components/dashboard/SectorMetrics"));
 const MilestoneTimeline = dynamic(() => import("@/components/dashboard/MilestoneTimeline"));
 const AboutCompact = dynamic(() => import("@/components/dashboard/AboutCompact"));
 const Resources = dynamic(() => import("@/components/dashboard/Resources"));
@@ -40,15 +40,15 @@ const MapView = dynamic(() => import("@/components/map/MapView"), {
   ),
 });
 
-type Tab = "overview" | "pillars" | "investments" | "projects" | "metrics" | "timeline" | "about" | "resources" | "districts";
+type Tab = "overview" | "pillars" | "investments" | "projects" | "me" | "timeline" | "about" | "resources" | "portfolio";
 
 const TABS: { key: Tab; label: string }[] = [
   { key: "overview", label: "Overview" },
   { key: "pillars", label: "Pillars" },
   { key: "investments", label: "Investment" },
   { key: "projects", label: "Projects" },
-  { key: "districts", label: "Districts" },
-  { key: "metrics", label: "Metrics" },
+  { key: "portfolio", label: "Portfolio Dev" },
+  { key: "me", label: "M&E" },
   { key: "timeline", label: "Timeline" },
   { key: "resources", label: "Resources" },
   { key: "about", label: "About" },
@@ -147,6 +147,69 @@ function DashboardPanel({ dashRef }: { dashRef: React.RefObject<HTMLDivElement |
             </div>
             <KPIScorecard kpis={kpisData.targets} />
             <InvestmentChart data={investmentsData} />
+
+            <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+              <h3 className="font-semibold text-cdmu-navy mb-3">Five Strategic Pillars</h3>
+              <div className="space-y-2.5">
+                {[
+                  { num: 1, title: "Generation Capacity", desc: "200 MW to 450+ MW through hydro, solar, and thermal", color: "bg-blue-500" },
+                  { num: 2, title: "Transmission & Distribution", desc: "132/66 kV backbone — Northern, Southern & Eastern corridors", color: "bg-indigo-500" },
+                  { num: 3, title: "On-Grid Distribution", desc: "EDSA connections from 300K to 800K+ metered customers", color: "bg-green-500" },
+                  { num: 4, title: "Off-Grid & Last-Mile", desc: "200+ mini-grids and 400K solar home systems", color: "bg-amber-500" },
+                  { num: 5, title: "Clean Cooking", desc: "500K+ households to LPG, ICS, and electric cooking", color: "bg-red-500" },
+                ].map((p) => (
+                  <div key={p.num} className="flex gap-3 items-center">
+                    <div className={`w-7 h-7 rounded-lg ${p.color} text-white flex items-center justify-center font-bold text-xs flex-shrink-0`}>{p.num}</div>
+                    <div>
+                      <span className="text-sm font-semibold text-cdmu-gray-900">{p.title}</span>
+                      <span className="text-xs text-cdmu-gray-500 ml-2">{p.desc}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white rounded-xl border border-cdmu-gray-200 p-4">
+                <h3 className="font-semibold text-cdmu-navy text-sm mb-3">Key Partners</h3>
+                <div className="space-y-2">
+                  {[
+                    { logo: "/logos/world-bank.jpg", name: "World Bank", role: "IDA / MCC Compact" },
+                    { logo: "/logos/afdb.jpeg", name: "AfDB", role: "M300 co-anchor" },
+                    { logo: "/logos/rockefeller.png", name: "Rockefeller", role: "Technical assistance" },
+                    { logo: "/logos/geapp.webp", name: "GEAPP", role: "Off-grid access" },
+                    { logo: "/logos/seforall.png", name: "SEforALL", role: "Compact secretariat" },
+                  ].map((p) => (
+                    <div key={p.name} className="flex items-center gap-2">
+                      <img src={p.logo} alt={p.name} className="w-7 h-7 object-contain flex-shrink-0" />
+                      <div>
+                        <span className="text-xs font-medium text-cdmu-gray-900">{p.name}</span>
+                        <span className="text-[10px] text-cdmu-gray-500 ml-1.5">{p.role}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-white rounded-xl border border-cdmu-gray-200 p-4">
+                <h3 className="font-semibold text-cdmu-navy text-sm mb-3">Key Milestones</h3>
+                <div className="space-y-2">
+                  {[
+                    { date: "Sep 2024", event: "Compact signed at UNGA 79" },
+                    { date: "Jan 2025", event: "CDMU established" },
+                    { date: "Apr 2025", event: "MCC Compact — $480M" },
+                    { date: "2026", event: "Bumbuna I & Northern Corridor" },
+                    { date: "2028", event: "Southern Corridor operational" },
+                    { date: "2030", event: "78% access target" },
+                  ].map((m) => (
+                    <div key={m.date} className="flex gap-2 items-start">
+                      <span className="text-[10px] font-bold text-cdmu-blue bg-cdmu-blue/10 px-1.5 py-0.5 rounded whitespace-nowrap">{m.date}</span>
+                      <span className="text-xs text-cdmu-gray-700">{m.event}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </>
         )}
 
@@ -162,12 +225,12 @@ function DashboardPanel({ dashRef }: { dashRef: React.RefObject<HTMLDivElement |
           <ProjectPipeline projects={projectsData.projects} />
         )}
 
-        {activeTab === "districts" && (
+        {activeTab === "portfolio" && (
           <DistrictProjects projects={projectsData.projects} />
         )}
 
-        {activeTab === "metrics" && (
-          <SectorMetrics metrics={metricsData.pillars} />
+        {activeTab === "me" && (
+          <MonitoringEvaluation metrics={metricsData.pillars} />
         )}
 
         {activeTab === "timeline" && <MilestoneTimeline />}
