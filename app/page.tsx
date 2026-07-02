@@ -146,7 +146,7 @@ function DashboardPanel({ dashRef }: { dashRef: React.RefObject<HTMLDivElement |
               </div>
             </div>
             <KPIScorecard kpis={kpisData.targets} />
-            <InvestmentChart data={investmentsData} />
+            <InvestmentChart data={investmentsData} showPipeline={false} />
 
             <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
               <h3 className="font-semibold text-cdmu-navy mb-3">Five Strategic Pillars</h3>

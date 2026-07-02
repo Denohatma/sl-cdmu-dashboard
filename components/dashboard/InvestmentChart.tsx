@@ -178,7 +178,7 @@ function PartnerEditModal({
   );
 }
 
-export default memo(function InvestmentChart({ data }: { data: InvestmentData }) {
+export default memo(function InvestmentChart({ data, showPipeline = true }: { data: InvestmentData; showPipeline?: boolean }) {
   const [pipelinePartners, setPipelinePartners] = useState<PipelinePartner[]>(INITIAL_PIPELINE_PARTNERS);
   const [editingPartner, setEditingPartner] = useState<PipelinePartner | null>(null);
 
@@ -253,8 +253,7 @@ export default memo(function InvestmentChart({ data }: { data: InvestmentData })
         </div>
       </div>
 
-      {/* Partner Pipeline & Prospects */}
-      <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+      {showPipeline && <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-sm font-semibold text-cdmu-gray-700">
             Partner Pipeline &amp; Prospects
@@ -336,9 +335,9 @@ export default memo(function InvestmentChart({ data }: { data: InvestmentData })
             </tbody>
           </table>
         </div>
-      </div>
+      </div>}
 
-      {editingPartner && (
+      {showPipeline && editingPartner && (
         <PartnerEditModal
           partner={editingPartner}
           onSave={handleSaveNotes}

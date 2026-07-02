@@ -13,22 +13,22 @@ const DISTRICTS: Record<string, { region: string; districts: string[] }> = {
 };
 
 const DISTRICT_PROJECT_MAP: Record<string, { projects: string[]; settlements: number; population: number; electrification: number }> = {
-  "Western Area Urban": { projects: ["dispatch-center"], settlements: 245, population: 1168000, electrification: 72 },
-  "Western Area Rural": { projects: ["decentralized-power"], settlements: 580, population: 442000, electrification: 28 },
-  Bombali: { projects: ["northern-corridor", "solar-standalone", "mini-grids"], settlements: 1420, population: 423000, electrification: 12 },
-  Tonkolili: { projects: ["bumbuna-upgrade", "connecting-mines", "solar-standalone", "mini-grids"], settlements: 1650, population: 531000, electrification: 8 },
-  Koinadugu: { projects: ["bekongor-dam", "solar-standalone", "mini-grids"], settlements: 890, population: 265000, electrification: 5 },
-  Falaba: { projects: ["solar-standalone", "mini-grids"], settlements: 620, population: 210000, electrification: 3 },
-  Karene: { projects: ["solar-standalone", "mini-grids"], settlements: 780, population: 295000, electrification: 6 },
-  "Port Loko": { projects: ["northern-corridor", "solar-standalone", "mini-grids"], settlements: 1100, population: 615000, electrification: 14 },
-  Kambia: { projects: ["solar-standalone", "mini-grids"], settlements: 720, population: 345000, electrification: 9 },
-  Bo: { projects: ["southern-corridor", "decentralized-power", "solar-standalone", "mini-grids"], settlements: 1350, population: 575000, electrification: 18 },
-  Bonthe: { projects: ["solar-standalone", "mini-grids"], settlements: 480, population: 200000, electrification: 7 },
-  Moyamba: { projects: ["southern-corridor", "solar-standalone", "mini-grids"], settlements: 950, population: 318000, electrification: 10 },
-  Pujehun: { projects: ["solar-standalone", "mini-grids"], settlements: 540, population: 346000, electrification: 6 },
-  Kailahun: { projects: ["solar-standalone", "mini-grids"], settlements: 870, population: 526000, electrification: 5 },
-  Kenema: { projects: ["southern-corridor", "dodo-dam", "decentralized-power", "solar-standalone", "mini-grids"], settlements: 1150, population: 609000, electrification: 15 },
-  Kono: { projects: ["connecting-mines", "solar-standalone", "mini-grids"], settlements: 750, population: 506000, electrification: 11 },
+  "Western Area Urban": { projects: ["dispatch-center", "nant", "scatec-solar", "mcc-compact"], settlements: 245, population: 1168000, electrification: 72 },
+  "Western Area Rural": { projects: ["newton-solar-bess", "respite", "solar-standalone"], settlements: 580, population: 442000, electrification: 28 },
+  Bombali: { projects: ["northern-corridor", "solar-standalone", "mini-grids", "seven-district-hq"], settlements: 1420, population: 423000, electrification: 12 },
+  Tonkolili: { projects: ["bumbuna-upgrade", "bumbuna-ii", "connecting-mines", "solar-standalone", "mini-grids"], settlements: 1650, population: 531000, electrification: 8 },
+  Koinadugu: { projects: ["bekongor-dam", "solar-standalone", "mini-grids", "seven-district-hq"], settlements: 890, population: 265000, electrification: 5 },
+  Falaba: { projects: ["solar-standalone", "mini-grids", "seven-district-hq"], settlements: 620, population: 210000, electrification: 3 },
+  Karene: { projects: ["solar-standalone", "mini-grids", "seven-district-hq"], settlements: 780, population: 295000, electrification: 6 },
+  "Port Loko": { projects: ["northern-corridor", "lungi-solar", "solar-standalone", "mini-grids"], settlements: 1100, population: 615000, electrification: 14 },
+  Kambia: { projects: ["solar-standalone", "mini-grids", "sogrea"], settlements: 720, population: 345000, electrification: 9 },
+  Bo: { projects: ["southern-corridor", "baoma-solar", "esleap", "solar-standalone", "mini-grids"], settlements: 1350, population: 575000, electrification: 18 },
+  Bonthe: { projects: ["solar-standalone", "mini-grids", "sogrea"], settlements: 480, population: 200000, electrification: 7 },
+  Moyamba: { projects: ["southern-corridor", "moyamba-singimi", "solar-standalone", "mini-grids"], settlements: 950, population: 318000, electrification: 10 },
+  Pujehun: { projects: ["solar-standalone", "mini-grids", "seven-district-hq"], settlements: 540, population: 346000, electrification: 6 },
+  Kailahun: { projects: ["solar-standalone", "mini-grids", "seven-district-hq"], settlements: 870, population: 526000, electrification: 5 },
+  Kenema: { projects: ["southern-corridor", "dodo-dam", "betmai-hydro", "esleap", "solar-standalone", "mini-grids"], settlements: 1150, population: 609000, electrification: 15 },
+  Kono: { projects: ["connecting-mines", "africa50-kono-solar", "solar-standalone", "mini-grids"], settlements: 750, population: 506000, electrification: 11 },
 };
 
 const STATUS_STYLES: Record<string, { bg: string; text: string }> = {
