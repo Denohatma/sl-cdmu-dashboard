@@ -1,0 +1,1102 @@
+[
+  {
+    "name": "Bandajuma",
+    "lat": 7.637846,
+    "lng": -11.822312,
+    "district": "Bo",
+    "capacity_kw": 45,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 160
+  },
+  {
+    "name": "Baoma Koya",
+    "lat": 7.962,
+    "lng": -11.747,
+    "district": "Bo",
+    "capacity_kw": 50,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 180
+  },
+  {
+    "name": "Gerihun",
+    "lat": 7.931254,
+    "lng": -11.576696,
+    "district": "Bo",
+    "capacity_kw": 130,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 450
+  },
+  {
+    "name": "Gondama",
+    "lat": 7.863346,
+    "lng": -11.707629,
+    "district": "Bo",
+    "capacity_kw": 65,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 220
+  },
+  {
+    "name": "Gorahun",
+    "lat": 7.756901,
+    "lng": -11.769306,
+    "district": "Bo",
+    "capacity_kw": 40,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 150
+  },
+  {
+    "name": "Koribondo",
+    "lat": 7.709303,
+    "lng": -11.692771,
+    "district": "Bo",
+    "capacity_kw": 60,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 210
+  },
+  {
+    "name": "Naiagolehun",
+    "lat": 7.683721,
+    "lng": -11.767324,
+    "district": "Bo",
+    "capacity_kw": 50,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 175
+  },
+  {
+    "name": "Sahn",
+    "lat": 8.1595,
+    "lng": -11.597957,
+    "district": "Bo",
+    "capacity_kw": 30,
+    "status": "operational",
+    "operator": "UEF / SEforALL",
+    "connections": 145
+  },
+  {
+    "name": "Serabu",
+    "lat": 7.824703,
+    "lng": -12.013431,
+    "district": "Bo",
+    "capacity_kw": 35,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 120
+  },
+  {
+    "name": "Sumbuya",
+    "lat": 7.650648,
+    "lng": -11.963469,
+    "district": "Bo",
+    "capacity_kw": 45,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 160
+  },
+  {
+    "name": "Telu",
+    "lat": 7.789368,
+    "lng": -11.70916,
+    "district": "Bo",
+    "capacity_kw": 40,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 135
+  },
+  {
+    "name": "Tikonko",
+    "lat": 7.88134,
+    "lng": -11.783723,
+    "district": "Bo",
+    "capacity_kw": 80,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 280
+  },
+  {
+    "name": "Batkanu",
+    "lat": 9.072571,
+    "lng": -12.415178,
+    "district": "Bombali",
+    "capacity_kw": 40,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 140
+  },
+  {
+    "name": "Binkolo",
+    "lat": 8.95458,
+    "lng": -11.978016,
+    "district": "Bombali",
+    "capacity_kw": 60,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 210
+  },
+  {
+    "name": "Dar-es-Salaam",
+    "lat": 9.318597,
+    "lng": -11.911049,
+    "district": "Bombali",
+    "capacity_kw": 35,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 120
+  },
+  {
+    "name": "Kamabai",
+    "lat": 9.148961,
+    "lng": -11.960952,
+    "district": "Bombali",
+    "capacity_kw": 45,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 155
+  },
+  {
+    "name": "Sainya",
+    "lat": 9.835082,
+    "lng": -12.379805,
+    "district": "Bombali",
+    "capacity_kw": 35,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 120
+  },
+  {
+    "name": "Mattru Jong",
+    "lat": 7.605943,
+    "lng": -12.173706,
+    "district": "Bonthe",
+    "capacity_kw": 100,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 350
+  },
+  {
+    "name": "Mogbwemo",
+    "lat": 7.761786,
+    "lng": -12.308867,
+    "district": "Bonthe",
+    "capacity_kw": 80,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 280
+  },
+  {
+    "name": "Mongere",
+    "lat": 7.613526,
+    "lng": -12.047646,
+    "district": "Bonthe",
+    "capacity_kw": 35,
+    "status": "planned",
+    "operator": "SOGREA (EU/Danish)",
+    "connections": 120
+  },
+  {
+    "name": "Ngesehun",
+    "lat": 7.370353,
+    "lng": -11.943717,
+    "district": "Bonthe",
+    "capacity_kw": 30,
+    "status": "planned",
+    "operator": "SOGREA (EU/Danish)",
+    "connections": 105
+  },
+  {
+    "name": "Torma Bum",
+    "lat": 7.463385,
+    "lng": -11.946174,
+    "district": "Bonthe",
+    "capacity_kw": 45,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 155
+  },
+  {
+    "name": "Bindi",
+    "lat": 9.915512,
+    "lng": -11.447462,
+    "district": "Falaba",
+    "capacity_kw": 55,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 190
+  },
+  {
+    "name": "Falaba",
+    "lat": 9.856106,
+    "lng": -11.321395,
+    "district": "Falaba",
+    "capacity_kw": 45,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 155
+  },
+  {
+    "name": "Musaia",
+    "lat": 9.759155,
+    "lng": -11.571031,
+    "district": "Falaba",
+    "capacity_kw": 50,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 175
+  },
+  {
+    "name": "Bomaru",
+    "lat": 8.013366,
+    "lng": -10.627306,
+    "district": "Kailahun",
+    "capacity_kw": 30,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 105
+  },
+  {
+    "name": "Buedu",
+    "lat": 8.279678,
+    "lng": -10.372265,
+    "district": "Kailahun",
+    "capacity_kw": 45,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 155
+  },
+  {
+    "name": "Daru",
+    "lat": 7.990016,
+    "lng": -10.840061,
+    "district": "Kailahun",
+    "capacity_kw": 60,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 210
+  },
+  {
+    "name": "Giema",
+    "lat": 7.864473,
+    "lng": -10.656973,
+    "district": "Kailahun",
+    "capacity_kw": 30,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 105
+  },
+  {
+    "name": "Jojoima",
+    "lat": 7.87607,
+    "lng": -10.787822,
+    "district": "Kailahun",
+    "capacity_kw": 55,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 190
+  },
+  {
+    "name": "Koindu",
+    "lat": 8.460798,
+    "lng": -10.336286,
+    "district": "Kailahun",
+    "capacity_kw": 90,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 310
+  },
+  {
+    "name": "Levuma",
+    "lat": 8.037207,
+    "lng": -10.723141,
+    "district": "Kailahun",
+    "capacity_kw": 35,
+    "status": "operational",
+    "operator": "UEF / SEforALL",
+    "connections": 165
+  },
+  {
+    "name": "Manowa",
+    "lat": 8.173231,
+    "lng": -10.749451,
+    "district": "Kailahun",
+    "capacity_kw": 40,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 140
+  },
+  {
+    "name": "Mobai",
+    "lat": 7.994927,
+    "lng": -10.754785,
+    "district": "Kailahun",
+    "capacity_kw": 35,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 120
+  },
+  {
+    "name": "Nyandehun",
+    "lat": 8.202724,
+    "lng": -10.481863,
+    "district": "Kailahun",
+    "capacity_kw": 45,
+    "status": "construction",
+    "operator": "SOGREA (EU/Danish)",
+    "connections": 155
+  },
+  {
+    "name": "Pendembu",
+    "lat": 8.098643,
+    "lng": -10.6938,
+    "district": "Kailahun",
+    "capacity_kw": 65,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 225
+  },
+  {
+    "name": "Segbwema",
+    "lat": 7.999148,
+    "lng": -10.950799,
+    "district": "Kailahun",
+    "capacity_kw": 75,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 260
+  },
+  {
+    "name": "Gbalamuya",
+    "lat": 9.171688,
+    "lng": -12.953438,
+    "district": "Kambia",
+    "capacity_kw": 40,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 140
+  },
+  {
+    "name": "Kasiri",
+    "lat": 8.940383,
+    "lng": -13.113568,
+    "district": "Kambia",
+    "capacity_kw": 60,
+    "status": "construction",
+    "operator": "Energicity / Power Leone",
+    "connections": 210
+  },
+  {
+    "name": "Kukuna",
+    "lat": 9.398398,
+    "lng": -12.667297,
+    "district": "Kambia",
+    "capacity_kw": 45,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 155
+  },
+  {
+    "name": "Madina Junction",
+    "lat": 9.289181,
+    "lng": -12.671542,
+    "district": "Kambia",
+    "capacity_kw": 65,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 225
+  },
+  {
+    "name": "Mambolo",
+    "lat": 8.915724,
+    "lng": -13.035018,
+    "district": "Kambia",
+    "capacity_kw": 50,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 175
+  },
+  {
+    "name": "Mapotolon",
+    "lat": 9.054139,
+    "lng": -13.272486,
+    "district": "Kambia",
+    "capacity_kw": 35,
+    "status": "planned",
+    "operator": "SOGREA (EU/Danish)",
+    "connections": 120
+  },
+  {
+    "name": "Rokupr",
+    "lat": 9.016414,
+    "lng": -12.946578,
+    "district": "Kambia",
+    "capacity_kw": 55,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 190
+  },
+  {
+    "name": "Tassor",
+    "lat": 9.002549,
+    "lng": -13.075501,
+    "district": "Kambia",
+    "capacity_kw": 35,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 120
+  },
+  {
+    "name": "Foredugu",
+    "lat": 8.750884,
+    "lng": -12.498775,
+    "district": "Karene",
+    "capacity_kw": 50,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 175
+  },
+  {
+    "name": "Gbinti",
+    "lat": 8.966771,
+    "lng": -12.599183,
+    "district": "Karene",
+    "capacity_kw": 50,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 175
+  },
+  {
+    "name": "Kamakwie",
+    "lat": 9.498726,
+    "lng": -12.241912,
+    "district": "Karene",
+    "capacity_kw": 80,
+    "status": "operational",
+    "operator": "UEF / SEforALL",
+    "connections": 350
+  },
+  {
+    "name": "Baama",
+    "lat": 8.352914,
+    "lng": -11.331833,
+    "district": "Kenema",
+    "capacity_kw": 40,
+    "status": "construction",
+    "operator": "SOGREA (EU/Danish)",
+    "connections": 140
+  },
+  {
+    "name": "Blama",
+    "lat": 7.875449,
+    "lng": -11.344344,
+    "district": "Kenema",
+    "capacity_kw": 55,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 190
+  },
+  {
+    "name": "Boajibu",
+    "lat": 8.190124,
+    "lng": -11.34044,
+    "district": "Kenema",
+    "capacity_kw": 50,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 175
+  },
+  {
+    "name": "Gegbwema",
+    "lat": 7.579036,
+    "lng": -11.154382,
+    "district": "Kenema",
+    "capacity_kw": 60,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 200
+  },
+  {
+    "name": "Hangha",
+    "lat": 7.93785,
+    "lng": -11.144169,
+    "district": "Kenema",
+    "capacity_kw": 40,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 140
+  },
+  {
+    "name": "Joru",
+    "lat": 7.769675,
+    "lng": -11.041897,
+    "district": "Kenema",
+    "capacity_kw": 35,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 120
+  },
+  {
+    "name": "Kenyema",
+    "lat": 8.473683,
+    "lng": -11.435848,
+    "district": "Kenema",
+    "capacity_kw": 35,
+    "status": "construction",
+    "operator": "SOGREA (EU/Danish)",
+    "connections": 120
+  },
+  {
+    "name": "Komende",
+    "lat": 8.14638,
+    "lng": -11.324776,
+    "district": "Kenema",
+    "capacity_kw": 30,
+    "status": "operational",
+    "operator": "UEF / SEforALL",
+    "connections": 150
+  },
+  {
+    "name": "Panguma",
+    "lat": 8.18451,
+    "lng": -11.131575,
+    "district": "Kenema",
+    "capacity_kw": 70,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 240
+  },
+  {
+    "name": "Alikalia",
+    "lat": 9.151239,
+    "lng": -11.388913,
+    "district": "Koinadugu",
+    "capacity_kw": 100,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 350
+  },
+  {
+    "name": "Katombo",
+    "lat": 9.546779,
+    "lng": -11.57115,
+    "district": "Koinadugu",
+    "capacity_kw": 50,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 175
+  },
+  {
+    "name": "Kondembaia",
+    "lat": 9.382937,
+    "lng": -11.565465,
+    "district": "Koinadugu",
+    "capacity_kw": 90,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 310
+  },
+  {
+    "name": "Kumala",
+    "lat": 9.065644,
+    "lng": -11.402067,
+    "district": "Koinadugu",
+    "capacity_kw": 30,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 105
+  },
+  {
+    "name": "Mansofinia",
+    "lat": 9.079644,
+    "lng": -11.035412,
+    "district": "Koinadugu",
+    "capacity_kw": 35,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 120
+  },
+  {
+    "name": "Sumbaria",
+    "lat": 8.832366,
+    "lng": -11.335039,
+    "district": "Koinadugu",
+    "capacity_kw": 40,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 140
+  },
+  {
+    "name": "Bumpe",
+    "lat": 8.611482,
+    "lng": -11.077751,
+    "district": "Kono",
+    "capacity_kw": 50,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 175
+  },
+  {
+    "name": "Gandorhun",
+    "lat": 8.436088,
+    "lng": -10.863225,
+    "district": "Kono",
+    "capacity_kw": 60,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 210
+  },
+  {
+    "name": "Jaiama Nimiyama",
+    "lat": 8.541239,
+    "lng": -11.246432,
+    "district": "Kono",
+    "capacity_kw": 65,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 225
+  },
+  {
+    "name": "Kayima",
+    "lat": 8.886529,
+    "lng": -11.159982,
+    "district": "Kono",
+    "capacity_kw": 45,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 155
+  },
+  {
+    "name": "Manjama",
+    "lat": 8.606826,
+    "lng": -10.696921,
+    "district": "Kono",
+    "capacity_kw": 35,
+    "status": "planned",
+    "operator": "SOGREA (EU/Danish)",
+    "connections": 120
+  },
+  {
+    "name": "Yomadu",
+    "lat": 8.746912,
+    "lng": -11.104359,
+    "district": "Kono",
+    "capacity_kw": 40,
+    "status": "planned",
+    "operator": "SOGREA (EU/Danish)",
+    "connections": 140
+  },
+  {
+    "name": "Bauya",
+    "lat": 8.18975,
+    "lng": -12.570168,
+    "district": "Moyamba",
+    "capacity_kw": 40,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 140
+  },
+  {
+    "name": "Bradford",
+    "lat": 8.293796,
+    "lng": -12.746785,
+    "district": "Moyamba",
+    "capacity_kw": 35,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 120
+  },
+  {
+    "name": "Gbangbatok",
+    "lat": 7.807046,
+    "lng": -12.380305,
+    "district": "Moyamba",
+    "capacity_kw": 65,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 225
+  },
+  {
+    "name": "Makore",
+    "lat": 8.079766,
+    "lng": -12.286718,
+    "district": "Moyamba",
+    "capacity_kw": 30,
+    "status": "planned",
+    "operator": "SOGREA (EU/Danish)",
+    "connections": 105
+  },
+  {
+    "name": "Mosongo",
+    "lat": 8.111842,
+    "lng": -12.056953,
+    "district": "Moyamba",
+    "capacity_kw": 40,
+    "status": "planned",
+    "operator": "SOGREA (EU/Danish)",
+    "connections": 140
+  },
+  {
+    "name": "Moyamba",
+    "lat": 8.160461,
+    "lng": -12.431406,
+    "district": "Moyamba",
+    "capacity_kw": 75,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 260
+  },
+  {
+    "name": "Njala",
+    "lat": 8.111531,
+    "lng": -12.073057,
+    "district": "Moyamba",
+    "capacity_kw": 55,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 190
+  },
+  {
+    "name": "Rotifunk",
+    "lat": 8.227375,
+    "lng": -12.676919,
+    "district": "Moyamba",
+    "capacity_kw": 50,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 175
+  },
+  {
+    "name": "Senehun",
+    "lat": 8.169184,
+    "lng": -11.949883,
+    "district": "Moyamba",
+    "capacity_kw": 30,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 105
+  },
+  {
+    "name": "Taiama",
+    "lat": 8.198214,
+    "lng": -12.059241,
+    "district": "Moyamba",
+    "capacity_kw": 60,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 210
+  },
+  {
+    "name": "Borup",
+    "lat": 8.645,
+    "lng": -12.895,
+    "district": "Port Loko",
+    "capacity_kw": 27,
+    "status": "operational",
+    "operator": "UEF / SEforALL",
+    "connections": 150
+  },
+  {
+    "name": "Kalangba",
+    "lat": 8.777214,
+    "lng": -13.135369,
+    "district": "Port Loko",
+    "capacity_kw": 55,
+    "status": "construction",
+    "operator": "Energicity / Power Leone",
+    "connections": 190
+  },
+  {
+    "name": "Karina",
+    "lat": 8.943981,
+    "lng": -12.589048,
+    "district": "Port Loko",
+    "capacity_kw": 25,
+    "status": "planned",
+    "operator": "SOGREA (EU/Danish)",
+    "connections": 90
+  },
+  {
+    "name": "Kirima",
+    "lat": 8.695165,
+    "lng": -13.117217,
+    "district": "Port Loko",
+    "capacity_kw": 40,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 140
+  },
+  {
+    "name": "Konta-Line",
+    "lat": 8.475289,
+    "lng": -12.545489,
+    "district": "Port Loko",
+    "capacity_kw": 30,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 105
+  },
+  {
+    "name": "Magbontoso",
+    "lat": 8.449107,
+    "lng": -12.866568,
+    "district": "Port Loko",
+    "capacity_kw": 35,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 120
+  },
+  {
+    "name": "Maiogbo",
+    "lat": 8.801909,
+    "lng": -13.112195,
+    "district": "Port Loko",
+    "capacity_kw": 35,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 120
+  },
+  {
+    "name": "Mange",
+    "lat": 8.925963,
+    "lng": -12.856703,
+    "district": "Port Loko",
+    "capacity_kw": 45,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 155
+  },
+  {
+    "name": "Masiaka",
+    "lat": 8.49155,
+    "lng": -12.757958,
+    "district": "Port Loko",
+    "capacity_kw": 45,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 155
+  },
+  {
+    "name": "Petifu Junction",
+    "lat": 8.618191,
+    "lng": -13.091281,
+    "district": "Port Loko",
+    "capacity_kw": 40,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 140
+  },
+  {
+    "name": "Rogbere",
+    "lat": 8.706195,
+    "lng": -12.681965,
+    "district": "Port Loko",
+    "capacity_kw": 40,
+    "status": "operational",
+    "operator": "Energicity / Power Leone",
+    "connections": 140
+  },
+  {
+    "name": "Bandajuma",
+    "lat": 7.572784,
+    "lng": -11.650847,
+    "district": "Pujehun",
+    "capacity_kw": 40,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 140
+  },
+  {
+    "name": "Fairo",
+    "lat": 7.246028,
+    "lng": -11.360137,
+    "district": "Pujehun",
+    "capacity_kw": 25,
+    "status": "operational",
+    "operator": "UEF / SEforALL",
+    "connections": 130
+  },
+  {
+    "name": "Gobaru",
+    "lat": 7.363171,
+    "lng": -11.710144,
+    "district": "Pujehun",
+    "capacity_kw": 35,
+    "status": "planned",
+    "operator": "SOGREA (EU/Danish)",
+    "connections": 120
+  },
+  {
+    "name": "Jendema",
+    "lat": 7.021353,
+    "lng": -11.384398,
+    "district": "Pujehun",
+    "capacity_kw": 55,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 190
+  },
+  {
+    "name": "Largo",
+    "lat": 7.51418,
+    "lng": -11.494323,
+    "district": "Pujehun",
+    "capacity_kw": 35,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 120
+  },
+  {
+    "name": "Potoru",
+    "lat": 7.504123,
+    "lng": -11.478094,
+    "district": "Pujehun",
+    "capacity_kw": 50,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 175
+  },
+  {
+    "name": "Pujehun",
+    "lat": 7.361452,
+    "lng": -11.72513,
+    "district": "Pujehun",
+    "capacity_kw": 85,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 290
+  },
+  {
+    "name": "Saba",
+    "lat": 7.436415,
+    "lng": -11.841254,
+    "district": "Pujehun",
+    "capacity_kw": 50,
+    "status": "planned",
+    "operator": "SOGREA (EU/Danish)",
+    "connections": 175
+  },
+  {
+    "name": "Sullima",
+    "lat": 6.970417,
+    "lng": -11.574567,
+    "district": "Pujehun",
+    "capacity_kw": 30,
+    "status": "planned",
+    "operator": "SOGREA (EU/Danish)",
+    "connections": 105
+  },
+  {
+    "name": "Zimmi",
+    "lat": 7.312618,
+    "lng": -11.311037,
+    "district": "Pujehun",
+    "capacity_kw": 70,
+    "status": "operational",
+    "operator": "PowerGen / Off-Grid Power",
+    "connections": 240
+  },
+  {
+    "name": "Bendugu",
+    "lat": 9.063715,
+    "lng": -11.488743,
+    "district": "Tonkolili",
+    "capacity_kw": 95,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 330
+  },
+  {
+    "name": "Bumbuna Town",
+    "lat": 9.044471,
+    "lng": -11.749413,
+    "district": "Tonkolili",
+    "capacity_kw": 70,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 240
+  },
+  {
+    "name": "Mabum",
+    "lat": 8.653643,
+    "lng": -11.979626,
+    "district": "Tonkolili",
+    "capacity_kw": 30,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 105
+  },
+  {
+    "name": "Makali",
+    "lat": 8.630254,
+    "lng": -11.662234,
+    "district": "Tonkolili",
+    "capacity_kw": 40,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 140
+  },
+  {
+    "name": "Masingbi",
+    "lat": 8.638141,
+    "lng": -11.47254,
+    "district": "Tonkolili",
+    "capacity_kw": 65,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 225
+  },
+  {
+    "name": "Matotaka",
+    "lat": 8.658843,
+    "lng": -11.857572,
+    "district": "Tonkolili",
+    "capacity_kw": 55,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 190
+  },
+  {
+    "name": "Mayopoh",
+    "lat": 8.499803,
+    "lng": -11.843641,
+    "district": "Tonkolili",
+    "capacity_kw": 30,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 105
+  },
+  {
+    "name": "Miro",
+    "lat": 8.442743,
+    "lng": -12.240533,
+    "district": "Tonkolili",
+    "capacity_kw": 35,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 120
+  },
+  {
+    "name": "Rogbom",
+    "lat": 8.748266,
+    "lng": -11.840241,
+    "district": "Tonkolili",
+    "capacity_kw": 50,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 175
+  },
+  {
+    "name": "Rongolla",
+    "lat": 8.484428,
+    "lng": -12.41725,
+    "district": "Tonkolili",
+    "capacity_kw": 45,
+    "status": "operational",
+    "operator": "Winch Energy",
+    "connections": 155
+  }
+]

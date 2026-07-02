@@ -19,8 +19,28 @@ import LayerControls from "./LayerControls";
 import FilterPanel from "./FilterPanel";
 import type { SettlementDetail, Project } from "@/lib/types";
 import projectsRaw from "@/data/projects.json";
+import minigridsRaw from "@/data/minigrids.json";
 
 const projects = (projectsRaw as { projects: Project[] }).projects;
+
+interface MinigridSite {
+  name: string;
+  lat: number;
+  lng: number;
+  district: string;
+  capacity_kw: number;
+  status: "operational" | "construction" | "planned";
+  operator: string;
+  connections: number;
+}
+
+const minigrids = minigridsRaw as MinigridSite[];
+
+const MG_STATUS_COLORS: Record<string, string> = {
+  operational: "#F4A300",
+  construction: "#3B82F6",
+  planned: "#94A3B8",
+};
 
 type BasemapStyle = "dark" | "light" | "satellite" | "terrain";
 
@@ -440,6 +460,48 @@ export default function MapView() {
         )}
 
         {state.visibleLayers.projects && <ProjectMarkers />}
+
+        {state.visibleLayers.minigrids && minigrids.map((mg) => (
+          <CircleMarker
+            key={`mg-${mg.name}-${mg.lat}`}
+            center={[mg.lat, mg.lng]}
+            radius={4}
+            pathOptions={{
+              fillColor: MG_STATUS_COLORS[mg.status] || "#F4A300",
+              color: "#fff",
+              weight: 1,
+              fillOpacity: 0.85,
+            }}
+          >
+            <Popup>
+              <div className="text-xs space-y-1 min-w-[160px]">
+                <p className="font-bold text-cdmu-gray-900">{mg.name}</p>
+                <p className="text-cdmu-gray-500">{mg.district} District</p>
+                <div className="flex justify-between">
+                  <span className="text-cdmu-gray-600">Capacity</span>
+                  <span className="font-semibold">{mg.capacity_kw} kW</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-cdmu-gray-600">Connections</span>
+                  <span className="font-semibold">{mg.connections.toLocaleString()}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-cdmu-gray-600">Operator</span>
+                  <span className="font-semibold">{mg.operator}</span>
+                </div>
+                <span
+                  className="inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold capitalize"
+                  style={{
+                    backgroundColor: MG_STATUS_COLORS[mg.status] + "22",
+                    color: MG_STATUS_COLORS[mg.status],
+                  }}
+                >
+                  {mg.status}
+                </span>
+              </div>
+            </Popup>
+          </CircleMarker>
+        ))}
       </MapContainer>
 
       <div className="absolute top-3 left-3 z-[1000] flex flex-col gap-2">
