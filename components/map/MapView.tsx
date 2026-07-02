@@ -22,9 +22,34 @@ import projectsRaw from "@/data/projects.json";
 
 const projects = (projectsRaw as { projects: Project[] }).projects;
 
+type BasemapStyle = "dark" | "light" | "satellite" | "terrain";
+
+const BASEMAPS: Record<BasemapStyle, { url: string; attribution: string; label: string }> = {
+  dark: {
+    url: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    label: "Dark",
+  },
+  light: {
+    url: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    label: "Light",
+  },
+  satellite: {
+    url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    attribution: '&copy; Esri, Maxar, Earthstar Geographics',
+    label: "Satellite",
+  },
+  terrain: {
+    url: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
+    attribution: '&copy; <a href="https://opentopomap.org">OpenTopoMap</a>',
+    label: "Terrain",
+  },
+};
+
 const SL_BOUNDS: L.LatLngBoundsExpression = [
-  [6.85, -13.5],
-  [10.0, -10.2],
+  [6.88, -13.42],
+  [9.98, -10.26],
 ];
 
 function getColor(attribute: string, props: Record<string, unknown>): string {
@@ -299,6 +324,7 @@ export default function MapView() {
   const [selectedDetail, setSelectedDetail] = useState<SettlementDetail | null>(null);
   const [detailCache, setDetailCache] = useState<Record<string, SettlementDetail>>({});
   const [showFilters, setShowFilters] = useState(false);
+  const [basemap, setBasemap] = useState<BasemapStyle>("dark");
 
   useEffect(() => {
     fetch("/data/settlements-points.json")
@@ -339,11 +365,11 @@ export default function MapView() {
 
   const districtStyle = useCallback(
     () => ({
-      fillColor: "#0072C6",
-      fillOpacity: 0.05,
-      color: "#0072C6",
-      weight: 1.5,
-      opacity: 0.6,
+      fillColor: "#2E9BE6",
+      fillOpacity: 0.08,
+      color: "#4FC3F7",
+      weight: 1.2,
+      opacity: 0.5,
     }),
     []
   );
@@ -361,10 +387,11 @@ export default function MapView() {
     <div className="relative w-full h-full">
       <MapContainer
         center={[8.46, -11.78]}
-        zoom={7}
+        zoom={8}
         zoomControl={false}
         maxBounds={SL_BOUNDS}
-        minZoom={7}
+        maxBoundsViscosity={1.0}
+        minZoom={8}
         maxZoom={16}
         preferCanvas={true}
         style={{ width: "100%", height: "100%" }}
@@ -373,8 +400,9 @@ export default function MapView() {
         <BoundMap />
         <ZoomControl position="topright" />
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          key={basemap}
+          attribution={BASEMAPS[basemap].attribution}
+          url={BASEMAPS[basemap].url}
         />
 
         {state.visibleLayers.districts && districtGeo && (
@@ -454,6 +482,22 @@ export default function MapView() {
       </div>
 
       <LayerControls />
+
+      <div className="absolute bottom-4 right-14 z-[1000] flex bg-white rounded-lg shadow-lg overflow-hidden">
+        {(Object.keys(BASEMAPS) as BasemapStyle[]).map((key) => (
+          <button
+            key={key}
+            onClick={() => setBasemap(key)}
+            className={`px-2.5 py-1.5 text-[10px] font-semibold transition-colors ${
+              basemap === key
+                ? "bg-cdmu-navy text-white"
+                : "text-cdmu-gray-600 hover:bg-cdmu-gray-100"
+            }`}
+          >
+            {BASEMAPS[key].label}
+          </button>
+        ))}
+      </div>
 
       <button
         onClick={() => setShowFilters(!showFilters)}

@@ -1,6 +1,7 @@
 "use client";
 
 import { memo, useState } from "react";
+import { useRole } from "@/lib/role-context";
 
 interface SectorData {
   sector: string;
@@ -179,6 +180,7 @@ function PartnerEditModal({
 }
 
 export default memo(function InvestmentChart({ data, showPipeline = true }: { data: InvestmentData; showPipeline?: boolean }) {
+  const { permissions } = useRole();
   const [pipelinePartners, setPipelinePartners] = useState<PipelinePartner[]>(INITIAL_PIPELINE_PARTNERS);
   const [editingPartner, setEditingPartner] = useState<PipelinePartner | null>(null);
 
@@ -281,7 +283,7 @@ export default memo(function InvestmentChart({ data, showPipeline = true }: { da
                 <th className="pb-2 pr-3 font-medium">Est. Value</th>
                 <th className="pb-2 pr-3 font-medium">Status</th>
                 <th className="pb-2 pr-3 font-medium">Notes</th>
-                <th className="pb-2 font-medium text-right">Edit</th>
+                {permissions.canEditPartners && <th className="pb-2 font-medium text-right">Edit</th>}
               </tr>
             </thead>
             <tbody className="divide-y divide-cdmu-gray-100">
@@ -309,27 +311,29 @@ export default memo(function InvestmentChart({ data, showPipeline = true }: { da
                   <td className="py-2.5 pr-3 text-cdmu-gray-500 max-w-[160px] truncate">
                     {pp.notes || <span className="italic text-cdmu-gray-400">--</span>}
                   </td>
-                  <td className="py-2.5 text-right">
-                    <button
-                      onClick={() => setEditingPartner(pp)}
-                      className="inline-flex items-center gap-1 px-2.5 py-1 text-[10px] font-medium text-cdmu-teal border border-cdmu-teal/30 rounded-lg hover:bg-cdmu-teal/10 transition-colors"
-                    >
-                      <svg
-                        className="w-3 h-3"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                  {permissions.canEditPartners && (
+                    <td className="py-2.5 text-right">
+                      <button
+                        onClick={() => setEditingPartner(pp)}
+                        className="inline-flex items-center gap-1 px-2.5 py-1 text-[10px] font-medium text-cdmu-teal border border-cdmu-teal/30 rounded-lg hover:bg-cdmu-teal/10 transition-colors"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                        />
-                      </svg>
-                      Edit
-                    </button>
-                  </td>
+                        <svg
+                          className="w-3 h-3"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                          />
+                        </svg>
+                        Edit
+                      </button>
+                    </td>
+                  )}
                 </tr>
               ))}
             </tbody>

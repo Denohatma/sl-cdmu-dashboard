@@ -33,7 +33,7 @@ const config: Config = {
         "cdmu-gray-900": "#0F172A",
       },
       fontFamily: {
-        sans: ["var(--font-poppins)", "Poppins", "Arial", "Helvetica", "sans-serif"],
+        sans: ["var(--font-open-sans)", "Open Sans", "Arial", "Helvetica", "sans-serif"],
         mono: ["var(--font-geist-mono)", "monospace"],
       },
     },

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { Project } from "@/lib/types";
+import { useRole } from "@/lib/role-context";
 
 const STATUS_CONFIG: Record<string, { bg: string; text: string; label: string }> = {
   funded: { bg: "bg-green-100", text: "text-green-800", label: "Funded" },
@@ -70,6 +71,7 @@ function EditNotesModal({
 
 export default function ProjectPipeline({ projects }: { projects: Project[] }) {
   const totalCost = projects.reduce((sum, p) => sum + p.cost_usd_million, 0);
+  const { permissions } = useRole();
   const [editingId, setEditingId] = useState<string | null>(null);
   const [notes, setNotes] = useState<Record<string, string>>(() =>
     Object.fromEntries(projects.map((p) => [p.id, p.notes || ""]))
@@ -114,7 +116,7 @@ export default function ProjectPipeline({ projects }: { projects: Project[] }) {
               <th className="text-left px-4 py-3 font-medium text-cdmu-gray-700">Status</th>
               <th className="text-left px-4 py-3 font-medium text-cdmu-gray-700 hidden md:table-cell">Notes</th>
               <th className="text-center px-4 py-3 font-medium text-cdmu-gray-700">PFS</th>
-              <th className="text-center px-4 py-3 font-medium text-cdmu-gray-700">Edit</th>
+              {permissions.canEditNotes && <th className="text-center px-4 py-3 font-medium text-cdmu-gray-700">Edit</th>}
             </tr>
           </thead>
           <tbody>
@@ -156,23 +158,25 @@ export default function ProjectPipeline({ projects }: { projects: Project[] }) {
                       View PFS
                     </Link>
                   </td>
-                  <td className="px-4 py-3 text-center">
-                    <button
-                      type="button"
-                      onClick={() => openEditor(project.id)}
-                      className="inline-flex items-center justify-center w-8 h-8 rounded-lg text-cdmu-gray-500 hover:text-cdmu-blue hover:bg-cdmu-gray-100 transition-colors"
-                      title="Edit Notes"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        className="w-4 h-4"
+                  {permissions.canEditNotes && (
+                    <td className="px-4 py-3 text-center">
+                      <button
+                        type="button"
+                        onClick={() => openEditor(project.id)}
+                        className="inline-flex items-center justify-center w-8 h-8 rounded-lg text-cdmu-gray-500 hover:text-cdmu-blue hover:bg-cdmu-gray-100 transition-colors"
+                        title="Edit Notes"
                       >
-                        <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
-                      </svg>
-                    </button>
-                  </td>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          className="w-4 h-4"
+                        >
+                          <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
+                        </svg>
+                      </button>
+                    </td>
+                  )}
                 </tr>
               );
             })}

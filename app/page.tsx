@@ -3,6 +3,7 @@
 import { useRef, useState, Suspense } from "react";
 import dynamic from "next/dynamic";
 import { AppProvider } from "@/lib/filter-context";
+import { RoleProvider, useRole, type UserRole } from "@/lib/role-context";
 import SplitPanel from "@/components/layout/SplitPanel";
 import KPIScorecard from "@/components/dashboard/KPIScorecard";
 import InvestmentChart from "@/components/dashboard/InvestmentChart";
@@ -54,8 +55,42 @@ const TABS: { key: Tab; label: string }[] = [
   { key: "about", label: "About" },
 ];
 
-function DashboardPanel({ dashRef }: { dashRef: React.RefObject<HTMLDivElement | null> }) {
-  const [activeTab, setActiveTab] = useState<Tab>("overview");
+function RoleSelector() {
+  const { role, setRole, permissions } = useRole();
+
+  return (
+    <div className="flex items-center gap-1.5">
+      <div className="flex bg-white/10 rounded-lg p-0.5">
+        <button
+          onClick={() => setRole("cdmu_staff")}
+          className={`px-2.5 py-1 rounded-md text-[10px] font-semibold transition-all ${
+            role === "cdmu_staff"
+              ? "bg-white text-cdmu-green-dark shadow-sm"
+              : "text-white/70 hover:text-white"
+          }`}
+        >
+          CDMU Staff
+        </button>
+        <button
+          onClick={() => setRole("external")}
+          className={`px-2.5 py-1 rounded-md text-[10px] font-semibold transition-all ${
+            role === "external"
+              ? "bg-white text-cdmu-blue-dark shadow-sm"
+              : "text-white/70 hover:text-white"
+          }`}
+        >
+          External
+        </button>
+      </div>
+      <span className="text-[9px] text-white/50 hidden sm:inline">
+        {role === "cdmu_staff" ? "Full access" : "View only"}
+      </span>
+    </div>
+  );
+}
+
+function DashboardPanel({ dashRef, activeTab, setActiveTab }: { dashRef: React.RefObject<HTMLDivElement | null>; activeTab: Tab; setActiveTab: (tab: Tab) => void }) {
+  const { permissions } = useRole();
 
   return (
     <div className="h-full flex flex-col bg-cdmu-gray-50">
@@ -79,25 +114,30 @@ function DashboardPanel({ dashRef }: { dashRef: React.RefObject<HTMLDivElement |
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={async () => {
-                  const { exportDashboardPDF } = await import("@/lib/export");
-                  if (dashRef.current) {
-                    exportDashboardPDF(dashRef.current, null);
-                  }
-                }}
-                className="text-white/70 hover:text-white text-xs px-2 py-1 rounded hover:bg-white/10 transition-colors"
-                title="Export PDF"
-              >
-                PDF
-              </button>
-              <a
-                href="/admin"
-                className="text-white/70 hover:text-white text-xs px-2 py-1 rounded hover:bg-white/10 transition-colors"
-              >
-                Admin
-              </a>
+            <div className="flex items-center gap-3">
+              <RoleSelector />
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={async () => {
+                    const { exportDashboardPDF } = await import("@/lib/export");
+                    if (dashRef.current) {
+                      exportDashboardPDF(dashRef.current, null);
+                    }
+                  }}
+                  className="text-white/70 hover:text-white text-xs px-2 py-1 rounded hover:bg-white/10 transition-colors"
+                  title="Export PDF"
+                >
+                  PDF
+                </button>
+                {permissions.canAccessAdmin && (
+                  <a
+                    href="/admin"
+                    className="text-white/70 hover:text-white text-xs px-2 py-1 rounded hover:bg-white/10 transition-colors"
+                  >
+                    Admin
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -262,16 +302,19 @@ function DashboardPanel({ dashRef }: { dashRef: React.RefObject<HTMLDivElement |
 
 export default function Home() {
   const dashRef = useRef<HTMLDivElement>(null);
+  const [activeTab, setActiveTab] = useState<Tab>("overview");
 
   return (
-    <AppProvider>
-      <div className="h-screen w-screen overflow-hidden">
-        <SplitPanel
-          left={<DashboardPanel dashRef={dashRef} />}
-          right={<MapView />}
-        />
-        <SaloneChat />
-      </div>
-    </AppProvider>
+    <RoleProvider>
+      <AppProvider>
+        <div className="h-screen w-screen overflow-hidden">
+          <SplitPanel
+            left={<DashboardPanel dashRef={dashRef} activeTab={activeTab} setActiveTab={setActiveTab} />}
+            right={<MapView />}
+          />
+          <SaloneChat onNavigateTab={(tab) => setActiveTab(tab as Tab)} />
+        </div>
+      </AppProvider>
+    </RoleProvider>
   );
 }
