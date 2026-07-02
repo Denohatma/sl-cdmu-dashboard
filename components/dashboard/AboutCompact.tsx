@@ -21,7 +21,7 @@ export default function AboutCompact() {
         </p>
       </div>
 
-      <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+      <div className="glass-card rounded-2xl p-5">
         <h3 className="font-semibold text-cdmu-navy mb-3">The Compact Delivery & Monitoring Unit (CDMU)</h3>
         <p className="text-sm text-cdmu-gray-700 leading-relaxed mb-3">
           The CDMU is the institutional mechanism established by the Government of Sierra Leone to coordinate,
@@ -52,7 +52,7 @@ export default function AboutCompact() {
         </ul>
       </div>
 
-      <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+      <div className="glass-card rounded-2xl p-5">
         <h3 className="font-semibold text-cdmu-navy mb-3">Five Strategic Pillars</h3>
         <div className="space-y-3">
           {[
@@ -75,7 +75,7 @@ export default function AboutCompact() {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+      <div className="glass-card rounded-2xl p-5">
         <h3 className="font-semibold text-cdmu-navy mb-3">Investment Requirements</h3>
         <p className="text-sm text-cdmu-gray-700 leading-relaxed mb-3">
           The compact requires a total investment of <strong>USD 2.245 billion</strong> across all five pillars,
@@ -102,7 +102,7 @@ export default function AboutCompact() {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+      <div className="glass-card rounded-2xl p-5">
         <h3 className="font-semibold text-cdmu-navy mb-3">Key Partners</h3>
         <div className="grid grid-cols-2 gap-4">
           {[
@@ -123,7 +123,7 @@ export default function AboutCompact() {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+      <div className="glass-card rounded-2xl p-5">
         <h3 className="font-semibold text-cdmu-navy mb-3">Key Dates & Milestones</h3>
         <div className="space-y-2">
           {[

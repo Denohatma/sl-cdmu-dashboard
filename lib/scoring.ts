@@ -9,7 +9,7 @@ export interface ScoreDimension {
 }
 
 export function calcCDMUScore(p: Project): number {
-  return getDimensions(p).reduce((sum, d) => sum + d.score * d.weight, 0);
+  return Math.round(getDimensions(p).reduce((sum, d) => sum + d.score * d.weight, 0));
 }
 
 export function getDimensions(p: Project): ScoreDimension[] {

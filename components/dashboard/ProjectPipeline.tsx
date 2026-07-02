@@ -46,8 +46,8 @@ function EditNotesModal({
 }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div className="absolute inset-0 bg-cdmu-navy/40 backdrop-blur-sm" onClick={onCancel} />
-      <div className="relative bg-white rounded-xl shadow-xl border border-cdmu-gray-200 w-full max-w-md mx-4 p-6">
+      <div className="absolute inset-0 bg-black/20 backdrop-blur-md" onClick={onCancel} />
+      <div className="relative glass rounded-2xl shadow-apple-lg border border-white/30 w-full max-w-md mx-4 p-6">
         <h3 className="text-lg font-semibold text-cdmu-navy mb-1">Edit Notes</h3>
         <p className="text-sm text-cdmu-gray-500 mb-4">{projectName}</p>
         <textarea
@@ -57,8 +57,8 @@ function EditNotesModal({
           onChange={(e) => onChange(e.target.value)}
         />
         <div className="flex justify-end gap-2 mt-4">
-          <button type="button" onClick={onCancel} className="px-4 py-2 rounded-xl text-sm font-medium text-cdmu-gray-700 bg-cdmu-gray-100 hover:bg-cdmu-gray-200 transition-colors">Cancel</button>
-          <button type="button" onClick={onSave} className="px-4 py-2 rounded-xl text-sm font-medium text-white bg-cdmu-blue hover:bg-cdmu-navy transition-colors">Save</button>
+          <button type="button" onClick={onCancel} className="px-4 py-2 rounded-full text-sm font-medium text-cdmu-gray-700 bg-cdmu-gray-100 hover:bg-cdmu-gray-200 transition-all">Cancel</button>
+          <button type="button" onClick={onSave} className="px-4 py-2 rounded-full text-sm font-medium text-white bg-cdmu-blue hover:bg-cdmu-blue-dark transition-all shadow-apple">Save</button>
         </div>
       </div>
     </div>
@@ -109,36 +109,36 @@ export default function ProjectPipeline({ projects }: { projects: Project[] }) {
       </div>
 
       <div className="grid grid-cols-4 gap-3">
-        <div className="bg-white rounded-xl border border-cdmu-gray-200 p-4">
+        <div className="glass-card rounded-2xl p-4">
           <p className="text-[10px] uppercase tracking-wider text-cdmu-gray-500 font-medium">Total Pipeline Value</p>
-          <p className="text-2xl font-bold text-cdmu-navy mt-1">{formatUSD(totalCost)}</p>
+          <p className="text-2xl font-bold text-cdmu-blue mt-1">{formatUSD(totalCost)}</p>
           <p className="text-[10px] text-cdmu-gray-400 mt-0.5">across {projects.length} projects</p>
         </div>
-        <div className="bg-white rounded-xl border border-cdmu-gray-200 p-4">
+        <div className="glass-card rounded-2xl p-4">
           <p className="text-[10px] uppercase tracking-wider text-cdmu-gray-500 font-medium">High Readiness</p>
-          <p className="text-2xl font-bold text-green-600 mt-1">{highReadiness}</p>
+          <p className="text-2xl font-bold text-cdmu-green mt-1">{highReadiness}</p>
           <p className="text-[10px] text-cdmu-gray-400 mt-0.5">CDMU score &ge; 70</p>
         </div>
-        <div className="bg-white rounded-xl border border-cdmu-gray-200 p-4">
+        <div className="glass-card rounded-2xl p-4">
           <p className="text-[10px] uppercase tracking-wider text-cdmu-gray-500 font-medium">Total Capacity</p>
-          <p className="text-2xl font-bold text-cdmu-navy mt-1">{totalCapacity.toLocaleString()} MW</p>
+          <p className="text-2xl font-bold text-cdmu-blue mt-1">{totalCapacity.toLocaleString()} MW</p>
           <p className="text-[10px] text-cdmu-gray-400 mt-0.5">generation pipeline</p>
         </div>
-        <div className="bg-white rounded-xl border border-cdmu-gray-200 p-4">
+        <div className="glass-card rounded-2xl p-4">
           <p className="text-[10px] uppercase tracking-wider text-cdmu-gray-500 font-medium">Avg. CDMU Score</p>
-          <p className="text-2xl font-bold text-cdmu-navy mt-1">{avgScore}</p>
+          <p className="text-2xl font-bold text-cdmu-blue mt-1">{avgScore}</p>
           <p className="text-[10px] text-cdmu-gray-400 mt-0.5">scored projects</p>
         </div>
       </div>
 
-      <div className="flex items-center gap-1 border-b border-cdmu-gray-200">
+      <div className="flex items-center gap-1 border-b border-cdmu-gray-200/60">
         {FILTER_TABS.map((tab) => (
           <button
             key={tab.key}
             onClick={() => setFilterTab(tab.key)}
-            className={`px-3 py-2 text-xs font-medium border-b-2 transition-colors ${
+            className={`px-3 py-2 text-xs font-medium border-b-2 transition-all duration-200 ${
               filterTab === tab.key
-                ? "border-cdmu-navy text-cdmu-navy"
+                ? "border-cdmu-blue text-cdmu-blue"
                 : "border-transparent text-cdmu-gray-500 hover:text-cdmu-gray-700"
             }`}
           >
@@ -149,7 +149,7 @@ export default function ProjectPipeline({ projects }: { projects: Project[] }) {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="text-xs border border-cdmu-gray-200 rounded-lg px-2 py-1 bg-white text-cdmu-gray-600"
+            className="text-xs border border-cdmu-gray-200/60 rounded-full px-3 py-1.5 bg-white/70 text-cdmu-gray-600 shadow-sm backdrop-blur-sm"
           >
             <option value="all">Any status</option>
             <option value="in_progress">In Progress</option>
@@ -161,10 +161,10 @@ export default function ProjectPipeline({ projects }: { projects: Project[] }) {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl border border-cdmu-gray-200 overflow-x-auto">
+      <div className="glass-card rounded-2xl overflow-x-auto">
         <table className="w-full text-sm min-w-[800px]">
           <thead>
-            <tr className="border-b border-cdmu-gray-200 bg-cdmu-gray-50 text-cdmu-gray-500">
+            <tr className="border-b border-cdmu-gray-200/40 bg-cdmu-gray-50/50 text-cdmu-gray-500">
               <th className="text-left px-4 py-3 font-medium">Project</th>
               <th className="text-left px-4 py-3 font-medium">Pillar</th>
               <th className="text-left px-4 py-3 font-medium">Lead / Sponsor</th>

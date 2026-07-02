@@ -67,7 +67,7 @@ const STATUS_LABEL: Record<FrameworkStatus, { label: string; dot: string }> = {
 
 function ResultsFramework() {
   return (
-    <div className="bg-white rounded-xl border border-cdmu-gray-200 shadow-sm overflow-hidden">
+    <div className="glass-card rounded-2xl shadow-sm overflow-hidden">
       <div className="px-5 py-3 border-b border-cdmu-gray-100 bg-cdmu-navy">
         <div className="flex items-center gap-2">
           <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -331,7 +331,7 @@ function KPIProgressTable({
   const redCount = filtered.filter((r) => r.rag === "red").length;
 
   return (
-    <div className="bg-white rounded-xl border border-cdmu-gray-200 shadow-sm overflow-hidden">
+    <div className="glass-card rounded-2xl shadow-sm overflow-hidden">
       <div className="px-5 py-3 border-b border-cdmu-gray-100 bg-cdmu-gray-50">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -481,7 +481,7 @@ function DataQualityScorecard() {
   const avgScore = Math.round(DATA_QUALITY.reduce((s, d) => s + d.score, 0) / DATA_QUALITY.length);
 
   return (
-    <div className="bg-white rounded-xl border border-cdmu-gray-200 shadow-sm overflow-hidden">
+    <div className="glass-card rounded-2xl shadow-sm overflow-hidden">
       <div className="px-5 py-3 border-b border-cdmu-gray-100 bg-cdmu-gray-50">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -581,7 +581,7 @@ const EVENT_STATUS_STYLES: Record<string, { bg: string; text: string; dot: strin
 
 function ReportingCalendar() {
   return (
-    <div className="bg-white rounded-xl border border-cdmu-gray-200 shadow-sm overflow-hidden">
+    <div className="glass-card rounded-2xl shadow-sm overflow-hidden">
       <div className="px-5 py-3 border-b border-cdmu-gray-100 bg-cdmu-gray-50">
         <div className="flex items-center gap-2">
           <svg className="w-4 h-4 text-cdmu-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -669,19 +669,19 @@ export default function MonitoringEvaluation({
 
       {/* Summary Stats Row */}
       <div className="grid grid-cols-4 gap-3">
-        <div className="bg-white rounded-xl border border-cdmu-gray-200 p-3">
+        <div className="glass-card rounded-2xl p-3">
           <p className="text-[10px] text-cdmu-gray-500 uppercase tracking-wider font-medium">Total Indicators</p>
           <p className="text-xl font-bold text-cdmu-navy mt-0.5">{kpiRows.length}</p>
           <p className="text-[10px] text-cdmu-gray-400">across {Object.keys(metrics).length} pillars</p>
         </div>
-        <div className="bg-white rounded-xl border border-cdmu-gray-200 p-3">
+        <div className="glass-card rounded-2xl p-3">
           <p className="text-[10px] text-cdmu-gray-500 uppercase tracking-wider font-medium">Avg. Progress</p>
           <p className={`text-xl font-bold mt-0.5 ${avgProgress >= 65 ? "text-cdmu-green" : avgProgress >= 35 ? "text-cdmu-gold" : "text-cdmu-red"}`}>{avgProgress}%</p>
           <div className="w-full bg-cdmu-gray-100 rounded-full h-1 mt-1">
             <div className={`h-1 rounded-full ${avgProgress >= 65 ? "bg-cdmu-green" : avgProgress >= 35 ? "bg-cdmu-gold" : "bg-cdmu-red"}`} style={{ width: `${avgProgress}%` }} />
           </div>
         </div>
-        <div className="bg-white rounded-xl border border-cdmu-gray-200 p-3">
+        <div className="glass-card rounded-2xl p-3">
           <p className="text-[10px] text-cdmu-gray-500 uppercase tracking-wider font-medium">RAG Summary</p>
           <div className="flex items-center gap-3 mt-1.5">
             <span className="flex items-center gap-1 text-xs"><span className="w-2.5 h-2.5 rounded-full bg-cdmu-green" /><span className="font-bold text-cdmu-gray-700">{greenTotal}</span></span>
@@ -690,7 +690,7 @@ export default function MonitoringEvaluation({
           </div>
           <p className="text-[10px] text-cdmu-gray-400 mt-1">{Math.round((greenTotal / kpiRows.length) * 100)}% on track</p>
         </div>
-        <div className="bg-white rounded-xl border border-cdmu-gray-200 p-3">
+        <div className="glass-card rounded-2xl p-3">
           <p className="text-[10px] text-cdmu-gray-500 uppercase tracking-wider font-medium">Next Report Due</p>
           <p className="text-sm font-bold text-cdmu-navy mt-0.5">15 Jul 2026</p>
           <p className="text-[10px] text-amber-600 font-medium mt-0.5">Q2 Quarterly Report</p>

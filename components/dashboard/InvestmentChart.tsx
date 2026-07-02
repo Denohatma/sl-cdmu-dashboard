@@ -202,21 +202,21 @@ export default memo(function InvestmentChart({ data, showPipeline = true }: { da
       </h2>
 
       <div className="grid grid-cols-3 gap-3">
-        <div className="bg-white rounded-xl border border-cdmu-gray-200 p-4 text-center">
+        <div className="glass-card rounded-2xl p-4 text-center">
           <p className="text-2xl font-bold text-cdmu-navy">{formatUSD(data.total_required)}</p>
           <p className="text-xs text-cdmu-gray-500 mt-1">Total Required</p>
         </div>
-        <div className="bg-white rounded-xl border border-cdmu-gray-200 p-4 text-center">
+        <div className="glass-card rounded-2xl p-4 text-center">
           <p className="text-2xl font-bold text-cdmu-navy">{formatUSD(data.public_total)}</p>
           <p className="text-xs text-cdmu-gray-500 mt-1">Public</p>
         </div>
-        <div className="bg-white rounded-xl border border-cdmu-gray-200 p-4 text-center">
+        <div className="glass-card rounded-2xl p-4 text-center">
           <p className="text-2xl font-bold text-cdmu-gold">{formatUSD(data.private_total)}</p>
           <p className="text-xs text-cdmu-gray-500 mt-1">Private</p>
         </div>
       </div>
 
-      <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+      <div className="glass-card rounded-2xl p-5">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-sm font-semibold text-cdmu-gray-700">By Sector</h3>
           <div className="flex items-center gap-4 text-xs">
@@ -235,7 +235,7 @@ export default memo(function InvestmentChart({ data, showPipeline = true }: { da
         </div>
       </div>
 
-      <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+      <div className="glass-card rounded-2xl p-5">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-sm font-semibold text-cdmu-gray-700">By Development Partner</h3>
           <p className="text-xs text-cdmu-gray-500">
@@ -255,7 +255,7 @@ export default memo(function InvestmentChart({ data, showPipeline = true }: { da
         </div>
       </div>
 
-      {showPipeline && <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+      {showPipeline && <div className="glass-card rounded-2xl p-5">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-sm font-semibold text-cdmu-gray-700">
             Partner Pipeline &amp; Prospects

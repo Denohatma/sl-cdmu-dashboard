@@ -362,7 +362,7 @@ export default function SaloneChat({ onNavigateTab }: { onNavigateTab?: (tab: st
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full bg-gradient-to-r from-cdmu-green to-cdmu-blue shadow-lg hover:shadow-xl transition-all flex items-center justify-center group"
+          className="fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full bg-gradient-to-br from-cdmu-green to-cdmu-blue shadow-apple-lg hover:shadow-[0_4px_20px_rgba(0,122,255,0.3)] hover:scale-105 transition-all duration-200 flex items-center justify-center group"
           title="Chat with Salone"
         >
           <svg className="w-7 h-7 text-white group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -373,15 +373,15 @@ export default function SaloneChat({ onNavigateTab }: { onNavigateTab?: (tab: st
       )}
 
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-[9999] w-96 h-[520px] bg-white rounded-2xl shadow-2xl border border-cdmu-gray-200 flex flex-col overflow-hidden">
+        <div className="fixed bottom-6 right-6 z-[9999] w-96 h-[520px] glass rounded-2xl shadow-apple-lg border border-white/30 flex flex-col overflow-hidden">
           <div className="bg-gradient-to-r from-cdmu-green-dark to-cdmu-blue-dark px-4 py-3 flex items-center justify-between flex-shrink-0">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center">
                 <img src="/logos/flag.png" alt="" className="w-5 h-3 rounded-sm" />
               </div>
               <div>
-                <h3 className="text-white font-bold text-sm">Salone</h3>
-                <p className="text-white/60 text-[10px]">M300 Energy Compact Assistant</p>
+                <h3 className="text-white font-bold text-sm tracking-tight">Salone</h3>
+                <p className="text-white/50 text-[10px]">M300 Energy Compact Assistant</p>
               </div>
             </div>
             <button
@@ -404,8 +404,8 @@ export default function SaloneChat({ onNavigateTab }: { onNavigateTab?: (tab: st
                   <div
                     className={`rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed ${
                       msg.role === "user"
-                        ? "bg-cdmu-blue text-white rounded-br-md"
-                        : "bg-white text-cdmu-gray-800 border border-cdmu-gray-200 rounded-bl-md shadow-sm"
+                        ? "bg-cdmu-blue text-white rounded-br-md shadow-sm"
+                        : "glass-card text-cdmu-gray-800 rounded-bl-md"
                     }`}
                   >
                     {renderContent(msg.content)}
@@ -427,7 +427,7 @@ export default function SaloneChat({ onNavigateTab }: { onNavigateTab?: (tab: st
             <div ref={messagesEndRef} />
           </div>
 
-          <div className="p-3 border-t border-cdmu-gray-200 bg-white flex-shrink-0">
+          <div className="p-3 border-t border-cdmu-gray-200/40 glass flex-shrink-0">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -435,12 +435,12 @@ export default function SaloneChat({ onNavigateTab }: { onNavigateTab?: (tab: st
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
                 placeholder="Ask about M300 projects..."
-                className="flex-1 text-sm border border-cdmu-gray-200 rounded-xl px-3 py-2 focus:outline-none focus:border-cdmu-blue"
+                className="flex-1 text-sm border border-cdmu-gray-200/60 rounded-full px-4 py-2 focus:outline-none focus:border-cdmu-blue/50 focus:ring-2 focus:ring-cdmu-blue/10 bg-white/70 backdrop-blur-sm transition-all"
               />
               <button
                 onClick={handleSend}
                 disabled={!input.trim()}
-                className="bg-cdmu-blue text-white px-3 py-2 rounded-xl hover:bg-cdmu-blue-dark transition-colors disabled:opacity-40"
+                className="bg-cdmu-blue text-white px-3 py-2 rounded-full hover:bg-cdmu-blue-dark transition-all duration-200 disabled:opacity-40 shadow-sm"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />

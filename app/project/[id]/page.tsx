@@ -7,7 +7,6 @@ import projectsRaw from "@/data/projects.json";
 import type { Project } from "@/lib/types";
 import {
   calculatePFS,
-  getRiskRegister,
   formatUSD,
   formatPct,
 } from "@/lib/pfs-calculations";
@@ -172,7 +171,7 @@ function computeCDMUScore(p: Project): { criteria: ScoreCriterion[]; overall: nu
     { label: "Gender & Inclusion", weight: 0.07, score: genderInclusion },
   ];
 
-  const overall = criteria.reduce((sum, c) => sum + c.score * c.weight, 0);
+  const overall = Math.round(criteria.reduce((sum, c) => sum + c.score * c.weight, 0));
 
   return { criteria, overall };
 }
@@ -305,7 +304,7 @@ function generateRisks(p: Project): { risk: string; severity: string; color: str
 
 function StagePipeline({ currentIndex }: { currentIndex: number }) {
   return (
-    <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5 overflow-x-auto">
+    <div className="glass-card rounded-2xl p-5 overflow-x-auto">
       <h3 className="text-xs font-semibold text-cdmu-gray-500 uppercase tracking-wider mb-4">
         Project Stage Pipeline
       </h3>
@@ -470,7 +469,7 @@ export default function ProjectDetailPage() {
             <div className="flex items-center gap-2 flex-shrink-0">
               <Link
                 href="/"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white/10 text-white text-sm font-medium hover:bg-white/20 transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium hover:bg-white/20 transition-all"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -479,7 +478,7 @@ export default function ProjectDetailPage() {
               </Link>
               <Link
                 href={`/pfs/${project.id}`}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-cdmu-gold text-cdmu-gray-900 text-sm font-semibold hover:bg-cdmu-gold-light transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-cdmu-gold text-cdmu-gray-900 text-sm font-semibold hover:bg-cdmu-gold-light transition-all shadow-apple"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -499,7 +498,7 @@ export default function ProjectDetailPage() {
         {/* KPI Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
           {/* Investment */}
-          <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+          <div className="glass-card rounded-2xl p-5">
             <p className="text-xs font-semibold text-cdmu-gray-500 uppercase tracking-wider">
               Investment
             </p>
@@ -512,7 +511,7 @@ export default function ProjectDetailPage() {
           </div>
 
           {/* CDMU Score */}
-          <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+          <div className="glass-card rounded-2xl p-5">
             <p className="text-xs font-semibold text-cdmu-gray-500 uppercase tracking-wider">
               CDMU Score
             </p>
@@ -531,7 +530,7 @@ export default function ProjectDetailPage() {
           </div>
 
           {/* Pillar */}
-          <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+          <div className="glass-card rounded-2xl p-5">
             <p className="text-xs font-semibold text-cdmu-gray-500 uppercase tracking-wider">
               Pillar
             </p>
@@ -550,15 +549,15 @@ export default function ProjectDetailPage() {
           {/* Main content area */}
           <div className="flex-1 min-w-0">
             {/* Tabs */}
-            <div className="flex gap-0.5 bg-white rounded-xl border border-cdmu-gray-200 p-1.5 mb-5">
+            <div className="flex gap-0.5 glass-card rounded-2xl p-1.5 mb-5">
               {TABS.map((tab) => (
                 <button
                   key={tab.key}
                   onClick={() => setActiveTab(tab.key)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex-1 ${
                     activeTab === tab.key
-                      ? "bg-cdmu-navy text-white"
-                      : "text-cdmu-gray-600 hover:bg-cdmu-gray-100"
+                      ? "bg-cdmu-blue text-white shadow-apple"
+                      : "text-cdmu-gray-600 hover:bg-black/[0.04]"
                   }`}
                 >
                   {tab.label}
@@ -570,7 +569,7 @@ export default function ProjectDetailPage() {
             {activeTab === "overview" && (
               <div className="space-y-5">
                 {/* Executive Summary */}
-                <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+                <div className="glass-card rounded-2xl p-5">
                   <h3 className="font-semibold text-cdmu-navy mb-3">Executive Summary</h3>
                   <div className="border-l-4 border-cdmu-gold bg-cdmu-gold/5 rounded-r-lg p-4">
                     <p className="text-sm text-cdmu-gray-700 leading-relaxed italic">
@@ -580,7 +579,7 @@ export default function ProjectDetailPage() {
                 </div>
 
                 {/* Project Particulars */}
-                <div className="bg-cdmu-gray-900 rounded-xl p-5 text-white">
+                <div className="bg-cdmu-gray-900 rounded-2xl p-5 text-white shadow-apple-lg">
                   <h3 className="font-semibold text-white mb-4">Project Particulars</h3>
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                     {[
@@ -608,7 +607,7 @@ export default function ProjectDetailPage() {
                 </div>
 
                 {/* CDMU Score Breakdown */}
-                <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+                <div className="glass-card rounded-2xl p-5">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="font-semibold text-cdmu-navy">CDMU Score Breakdown</h3>
                     <div className="flex items-center gap-2">
@@ -646,7 +645,7 @@ export default function ProjectDetailPage() {
                 {fin ? (
                   <>
                     {/* Key Metrics */}
-                    <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+                    <div className="glass-card rounded-2xl p-5">
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="font-semibold text-cdmu-navy">Key Financial Metrics</h3>
                         <Link
@@ -657,28 +656,28 @@ export default function ProjectDetailPage() {
                         </Link>
                       </div>
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                        <div className="bg-cdmu-gray-50 rounded-lg p-4 text-center">
+                        <div className="bg-white/50 rounded-xl backdrop-blur-sm p-4 text-center">
                           <p className="text-xs text-cdmu-gray-500 font-medium">LCOE</p>
                           <p className="text-xl font-bold text-cdmu-navy mt-1">
                             ${fin.lcoe.toFixed(3)}
                           </p>
                           <p className="text-[10px] text-cdmu-gray-400">$/kWh</p>
                         </div>
-                        <div className="bg-cdmu-gray-50 rounded-lg p-4 text-center">
+                        <div className="bg-white/50 rounded-xl backdrop-blur-sm p-4 text-center">
                           <p className="text-xs text-cdmu-gray-500 font-medium">Project IRR</p>
                           <p className="text-xl font-bold text-cdmu-navy mt-1">
                             {formatPct(fin.projectIrr)}
                           </p>
                           <p className="text-[10px] text-cdmu-gray-400">Internal Rate of Return</p>
                         </div>
-                        <div className="bg-cdmu-gray-50 rounded-lg p-4 text-center">
+                        <div className="bg-white/50 rounded-xl backdrop-blur-sm p-4 text-center">
                           <p className="text-xs text-cdmu-gray-500 font-medium">NPV @10%</p>
                           <p className={`text-xl font-bold mt-1 ${fin.npv10 >= 0 ? "text-cdmu-green-dark" : "text-cdmu-red"}`}>
                             {formatUSD(fin.npv10)}
                           </p>
                           <p className="text-[10px] text-cdmu-gray-400">Net Present Value</p>
                         </div>
-                        <div className="bg-cdmu-gray-50 rounded-lg p-4 text-center">
+                        <div className="bg-white/50 rounded-xl backdrop-blur-sm p-4 text-center">
                           <p className="text-xs text-cdmu-gray-500 font-medium">Min DSCR</p>
                           <p className={`text-xl font-bold mt-1 ${!isFinite(fin.minDscr) ? "text-cdmu-gray-400" : fin.minDscr >= 1.25 ? "text-cdmu-green-dark" : "text-cdmu-red"}`}>
                             {!isFinite(fin.minDscr) ? "N/A" : `${fin.minDscr.toFixed(2)}x`}
@@ -689,7 +688,7 @@ export default function ProjectDetailPage() {
                     </div>
 
                     {/* Capital Structure */}
-                    <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+                    <div className="glass-card rounded-2xl p-5">
                       <h3 className="font-semibold text-cdmu-navy mb-4">Capital Structure</h3>
                       <div className="flex items-center gap-4 mb-4">
                         <div className="flex-1">
@@ -710,14 +709,14 @@ export default function ProjectDetailPage() {
                         </div>
                       </div>
                       <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-cdmu-gray-50 rounded-lg p-3">
+                        <div className="bg-white/50 rounded-xl backdrop-blur-sm p-3">
                           <p className="text-xs text-cdmu-gray-500">Senior Debt</p>
                           <p className="text-lg font-bold text-cdmu-navy">{formatUSD(fin.debtAmount)}</p>
                           <p className="text-[10px] text-cdmu-gray-400">
                             {project.interest_rate ? `${(project.interest_rate * 100).toFixed(1)}% over ${project.loan_tenure || 15}yr` : "Terms TBD"}
                           </p>
                         </div>
-                        <div className="bg-cdmu-gray-50 rounded-lg p-3">
+                        <div className="bg-white/50 rounded-xl backdrop-blur-sm p-3">
                           <p className="text-xs text-cdmu-gray-500">Equity</p>
                           <p className="text-lg font-bold text-cdmu-gold">{formatUSD(fin.equityAmount)}</p>
                           <p className="text-[10px] text-cdmu-gray-400">Developer / DFI equity</p>
@@ -740,7 +739,7 @@ export default function ProjectDetailPage() {
                     </div>
                   </>
                 ) : (
-                  <div className="bg-white rounded-xl border border-cdmu-gray-200 p-8 text-center">
+                  <div className="glass-card rounded-2xl p-8 text-center">
                     <svg className="w-12 h-12 text-cdmu-gray-300 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                     </svg>
@@ -762,48 +761,64 @@ export default function ProjectDetailPage() {
             {/* ============ Documents Tab ============ */}
             {activeTab === "documents" && (
               <div className="space-y-5">
-                <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
-                  <h3 className="font-semibold text-cdmu-navy mb-4">Project Documents</h3>
-                  <div className="space-y-3">
-                    {[
-                      { name: `CDMU-PFS-${project.id.toUpperCase()}-001`, type: "Pre-Feasibility Study", status: "Available", link: `/pfs/${project.id}` },
-                      { name: `CDMU-FC-${project.id.toUpperCase()}-001`, type: "Fact Sheet", status: "Draft", link: null },
-                      { name: `CDMU-ESIA-${project.id.toUpperCase()}-001`, type: "ESIA Screening", status: project.status === "in_progress" || project.status === "funded" ? "Complete" : "Pending", link: null },
-                      { name: `CDMU-FIN-${project.id.toUpperCase()}-001`, type: "Financial Model", status: fin ? "Available" : "Pending", link: fin ? `/pfs/${project.id}` : null },
-                    ].map((doc) => (
-                      <div key={doc.name} className="flex items-center justify-between py-3 border-b border-cdmu-gray-100 last:border-0">
-                        <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 rounded-lg bg-cdmu-navy/10 flex items-center justify-center flex-shrink-0">
-                            <svg className="w-4 h-4 text-cdmu-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                            </svg>
-                          </div>
-                          <div>
-                            <p className="text-sm font-medium text-cdmu-gray-900">{doc.name}</p>
-                            <p className="text-xs text-cdmu-gray-500">{doc.type}</p>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
-                            doc.status === "Available" || doc.status === "Complete"
-                              ? "bg-cdmu-green/10 text-cdmu-green-dark"
-                              : doc.status === "Draft"
-                              ? "bg-cdmu-amber/10 text-cdmu-amber"
-                              : "bg-cdmu-gray-100 text-cdmu-gray-500"
-                          }`}>
-                            {doc.status}
-                          </span>
-                          {doc.link && (
-                            <Link
-                              href={doc.link}
-                              className="text-xs text-cdmu-navy hover:underline font-medium"
-                            >
-                              View
-                            </Link>
-                          )}
-                        </div>
+                <div className="glass-card rounded-2xl p-5">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="font-semibold text-cdmu-navy">PFS Report</h3>
+                  </div>
+                  <div className="flex items-center justify-between py-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-cdmu-blue/10 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4 text-cdmu-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
                       </div>
-                    ))}
+                      <div>
+                        <p className="text-sm font-medium text-cdmu-gray-900">Pre-Feasibility Study</p>
+                        <p className="text-xs text-cdmu-gray-500">Auto-generated from project data</p>
+                      </div>
+                    </div>
+                    <Link
+                      href={`/pfs/${project.id}`}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-white bg-cdmu-blue hover:bg-cdmu-blue-dark transition-all shadow-sm"
+                    >
+                      View PFS
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="glass-card rounded-2xl p-5">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="font-semibold text-cdmu-navy">Uploaded Documents</h3>
+                  </div>
+                  <div className="border-2 border-dashed border-cdmu-gray-300/50 rounded-2xl p-6 text-center">
+                    <svg className="w-10 h-10 text-cdmu-gray-400 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                    <p className="text-sm font-medium text-cdmu-gray-700 mb-1">Upload project documents</p>
+                    <p className="text-xs text-cdmu-gray-500 mb-3">ESIA reports, financial models, fact sheets, PPAs</p>
+                    <label className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-medium text-cdmu-blue bg-cdmu-blue/10 hover:bg-cdmu-blue/15 transition-all cursor-pointer">
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                      </svg>
+                      Choose Files
+                      <input type="file" className="hidden" multiple accept=".pdf,.docx,.xlsx,.pptx" />
+                    </label>
+                  </div>
+                  <p className="text-[10px] text-cdmu-gray-500 mt-3 text-center">No documents uploaded yet</p>
+                </div>
+
+                <div className="glass-card rounded-2xl p-5">
+                  <h3 className="font-semibold text-cdmu-navy mb-3">PFS Agents</h3>
+                  <div className="bg-cdmu-amber/8 border border-cdmu-amber/20 rounded-xl p-4 flex items-start gap-3">
+                    <svg className="w-5 h-5 text-cdmu-amber flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div>
+                      <p className="text-sm font-medium text-cdmu-gray-800">PFS Agents in Development</p>
+                      <p className="text-xs text-cdmu-gray-600 mt-1">
+                        AI-powered agents for automated pre-feasibility analysis, financial modeling, and ESIA screening are currently being developed. These will generate comprehensive, bankable-quality reports.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -812,13 +827,13 @@ export default function ProjectDetailPage() {
             {/* ============ Risk Tab ============ */}
             {activeTab === "risk" && (
               <div className="space-y-5">
-                <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+                <div className="glass-card rounded-2xl p-5">
                   <h3 className="font-semibold text-cdmu-navy mb-4">Risk Assessment</h3>
                   <div className="space-y-3">
                     {risks.map((r, i) => (
                       <div
                         key={i}
-                        className="flex items-start gap-3 py-3 border-b border-cdmu-gray-100 last:border-0"
+                        className="flex items-start gap-3 py-3 border-b border-cdmu-gray-200/30 last:border-0"
                       >
                         <div className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${r.color}`} />
                         <div className="flex-1">
@@ -841,7 +856,7 @@ export default function ProjectDetailPage() {
                 </div>
 
                 {/* PFS-based risk register link */}
-                <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+                <div className="glass-card rounded-2xl p-5">
                   <h3 className="font-semibold text-cdmu-navy mb-2">Detailed Risk Register</h3>
                   <p className="text-sm text-cdmu-gray-500 mb-3">
                     A comprehensive risk register with likelihood, impact, RAG rating, and mitigation measures is available in the Pre-Feasibility Study.
@@ -860,7 +875,7 @@ export default function ProjectDetailPage() {
           {/* Right Sidebar */}
           <div className="w-full lg:w-80 flex-shrink-0 space-y-5">
             {/* CDMU Analysis */}
-            <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+            <div className="glass-card rounded-2xl p-5">
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-6 h-6 rounded-full bg-cdmu-navy flex items-center justify-center flex-shrink-0">
                   <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -873,7 +888,7 @@ export default function ProjectDetailPage() {
             </div>
 
             {/* Recommended Next Steps */}
-            <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+            <div className="glass-card rounded-2xl p-5">
               <h3 className="font-semibold text-cdmu-navy text-sm mb-3">Recommended Next Steps</h3>
               <div className="space-y-2.5">
                 {nextSteps.map((step, i) => (
@@ -888,7 +903,7 @@ export default function ProjectDetailPage() {
             </div>
 
             {/* Quick Facts */}
-            <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+            <div className="glass-card rounded-2xl p-5">
               <h3 className="font-semibold text-cdmu-navy text-sm mb-3">Quick Facts</h3>
               <div className="space-y-2.5">
                 {project.capacity_mw ? (
@@ -931,9 +946,13 @@ export default function ProjectDetailPage() {
         </div>
 
         {/* Footer */}
-        <footer className="text-center text-xs text-cdmu-gray-400 py-6 mt-8 border-t border-cdmu-gray-200">
-          <p>Sierra Leone Compact Delivery & Monitoring Unit -- Mission 300</p>
-          <p className="mt-1">Last updated: {projects.last_updated}</p>
+        <footer className="text-center text-xs text-cdmu-gray-500 py-6 mt-8 border-t border-cdmu-gray-200/60">
+          <p>Sierra Leone Compact Delivery & Monitoring Unit · Mission 300</p>
+          <p className="mt-1.5 text-cdmu-gray-500/60">Last updated: {projects.last_updated}</p>
+          <div className="flex items-center justify-center gap-1.5 mt-3 text-cdmu-gray-500/60">
+            <span>Platform Supported by</span>
+            <img src="/logos/afcen.png" alt="AfCEN" className="h-5 object-contain" />
+          </div>
         </footer>
       </div>
     </div>

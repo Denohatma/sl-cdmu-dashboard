@@ -64,7 +64,7 @@ export default function DistrictProjects({ projects }: { projects: Project[] }) 
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="lg:col-span-1">
-          <div className="bg-white rounded-xl border border-cdmu-gray-200 p-3 max-h-[500px] overflow-y-auto scrollbar-thin">
+          <div className="glass-card rounded-2xl p-3 max-h-[500px] overflow-y-auto scrollbar-thin">
             <p className="text-xs font-medium text-cdmu-gray-500 uppercase tracking-wider mb-2 px-1">Select a District</p>
             {Object.entries(DISTRICTS).map(([regionName, regionData]) => (
               <div key={regionName} className="mb-3">
@@ -101,7 +101,7 @@ export default function DistrictProjects({ projects }: { projects: Project[] }) 
 
         <div className="lg:col-span-2">
           {!selectedDistrict ? (
-            <div className="bg-white rounded-xl border border-cdmu-gray-200 p-8 text-center">
+            <div className="glass-card rounded-2xl p-8 text-center">
               <svg className="w-12 h-12 mx-auto text-cdmu-gray-300 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
               </svg>
@@ -109,7 +109,7 @@ export default function DistrictProjects({ projects }: { projects: Project[] }) 
             </div>
           ) : (
             <div className="space-y-4">
-              <div className="bg-white rounded-xl border border-cdmu-gray-200 p-4">
+              <div className="glass-card rounded-2xl p-4">
                 <h3 className="font-bold text-cdmu-navy text-base mb-3">{selectedDistrict} District</h3>
                 {districtData && (
                   <div className="grid grid-cols-3 gap-3 mb-4">

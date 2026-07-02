@@ -137,7 +137,7 @@ function PillarSection({ pillar }: { pillar: Pillar }) {
   const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
 
   return (
-    <div className="bg-white rounded-xl border border-cdmu-gray-200 shadow-sm overflow-hidden">
+    <div className="glass-card rounded-2xl shadow-sm overflow-hidden">
       <div className="px-5 py-3 flex items-center justify-between" style={{ borderLeft: `4px solid ${pillar.color}` }}>
         <div className="flex items-center gap-3">
           <div

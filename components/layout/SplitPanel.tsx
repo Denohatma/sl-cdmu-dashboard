@@ -25,13 +25,13 @@ export default function SplitPanel({
         <div className="h-full overflow-y-auto">{left}</div>
       </div>
 
-      <div className="relative flex-shrink-0 w-1 bg-cdmu-gray-200 hover:bg-cdmu-teal transition-colors group cursor-col-resize">
-        <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-10 flex flex-col gap-0.5">
+      <div className="relative flex-shrink-0 w-[3px] bg-cdmu-gray-200/60 hover:bg-cdmu-blue/30 transition-all group cursor-col-resize">
+        <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-10 flex flex-col gap-1">
           <button
             onClick={() =>
               setCollapsed((c) => (c === "left" ? "none" : "left"))
             }
-            className="bg-white border border-cdmu-gray-300 rounded-full w-6 h-6 flex items-center justify-center text-cdmu-gray-500 hover:text-cdmu-navy hover:border-cdmu-navy shadow-sm transition-colors"
+            className="glass bg-white/90 border border-white/50 rounded-full w-6 h-6 flex items-center justify-center text-cdmu-gray-500 hover:text-cdmu-blue hover:border-cdmu-blue/40 shadow-apple transition-all duration-200"
             title={collapsed === "left" ? "Show Dashboard" : "Hide Dashboard"}
           >
             <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -47,7 +47,7 @@ export default function SplitPanel({
             onClick={() =>
               setCollapsed((c) => (c === "right" ? "none" : "right"))
             }
-            className="bg-white border border-cdmu-gray-300 rounded-full w-6 h-6 flex items-center justify-center text-cdmu-gray-500 hover:text-cdmu-navy hover:border-cdmu-navy shadow-sm transition-colors"
+            className="glass bg-white/90 border border-white/50 rounded-full w-6 h-6 flex items-center justify-center text-cdmu-gray-500 hover:text-cdmu-blue hover:border-cdmu-blue/40 shadow-apple transition-all duration-200"
             title={collapsed === "right" ? "Show Map" : "Hide Map"}
           >
             <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">

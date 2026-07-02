@@ -32,9 +32,7 @@ function Speedometer({ current, baseline, target, unit }: { current: number; bas
   }
 
   const arcStart = polarToXY(startAngle, r);
-  const arcEnd = polarToXY(endAngle, r);
   const filledEnd = polarToXY(startAngle + (totalSweep * clamped) / 100, r);
-  const largeArc = totalSweep > 180 ? 1 : 0;
   const filledSweep = totalSweep * clamped / 100;
   const filledLarge = filledSweep > 180 ? 1 : 0;
 
@@ -43,10 +41,10 @@ function Speedometer({ current, baseline, target, unit }: { current: number; bas
   const needleBase2 = polarToXY(needleAngle - 90, 3);
 
   const zones = [
-    { from: 0, to: 25, color: "#E74C3C" },
-    { from: 25, to: 50, color: "#F39C12" },
-    { from: 50, to: 75, color: "#F7C948" },
-    { from: 75, to: 100, color: "#1EB53A" },
+    { from: 0, to: 25, color: "#FF3B30" },
+    { from: 25, to: 50, color: "#FF9500" },
+    { from: 50, to: 75, color: "#FFCC00" },
+    { from: 75, to: 100, color: "#34C759" },
   ];
 
   const ticks = [0, 25, 50, 75, 100];
@@ -65,7 +63,8 @@ function Speedometer({ current, baseline, target, unit }: { current: number; bas
               fill="none"
               stroke={zone.color}
               strokeWidth="6"
-              opacity={0.25}
+              opacity={0.2}
+              strokeLinecap="round"
             />
           );
         })}
@@ -73,7 +72,7 @@ function Speedometer({ current, baseline, target, unit }: { current: number; bas
         <path
           d={`M ${arcStart.x} ${arcStart.y} A ${r} ${r} 0 ${filledLarge} 1 ${filledEnd.x} ${filledEnd.y}`}
           fill="none"
-          stroke={clamped >= 75 ? "#1EB53A" : clamped >= 50 ? "#F7C948" : clamped >= 25 ? "#F39C12" : "#E74C3C"}
+          stroke={clamped >= 75 ? "#34C759" : clamped >= 50 ? "#FFCC00" : clamped >= 25 ? "#FF9500" : "#FF3B30"}
           strokeWidth="6"
           strokeLinecap="round"
           className="transition-all duration-700"
@@ -86,8 +85,8 @@ function Speedometer({ current, baseline, target, unit }: { current: number; bas
           const label = polarToXY(angle, r + 8);
           return (
             <g key={t}>
-              <line x1={inner.x} y1={inner.y} x2={outer.x} y2={outer.y} stroke="#94A3B8" strokeWidth="1" />
-              <text x={label.x} y={label.y} textAnchor="middle" dominantBaseline="middle" className="fill-gray-400" fontSize="5">
+              <line x1={inner.x} y1={inner.y} x2={outer.x} y2={outer.y} stroke="#C7C7CC" strokeWidth="0.8" />
+              <text x={label.x} y={label.y} textAnchor="middle" dominantBaseline="middle" className="fill-[#8E8E93]" fontSize="4.5">
                 {t}
               </text>
             </g>
@@ -96,16 +95,14 @@ function Speedometer({ current, baseline, target, unit }: { current: number; bas
 
         <polygon
           points={`${needleTip.x},${needleTip.y} ${needleBase1.x},${needleBase1.y} ${needleBase2.x},${needleBase2.y}`}
-          fill="#334155"
+          fill="#48484A"
           className="transition-all duration-700"
         />
-        <circle cx={cx} cy={cy} r="3.5" fill="#334155" />
+        <circle cx={cx} cy={cy} r="3.5" fill="#48484A" />
         <circle cx={cx} cy={cy} r="2" fill="white" />
       </svg>
       <div className="absolute bottom-0 left-0 right-0 text-center">
-        <span className="text-lg font-bold text-cdmu-gray-900">
-          {formatValue(current, unit)}
-        </span>
+        <span className="text-lg font-bold text-cdmu-gray-900">{formatValue(current, unit)}</span>
         <span className="text-[10px] text-cdmu-gray-500 ml-1">({clamped.toFixed(0)}%)</span>
       </div>
     </div>
@@ -114,10 +111,10 @@ function Speedometer({ current, baseline, target, unit }: { current: number; bas
 
 function KPICard({ kpi }: { kpi: KPI }) {
   return (
-    <div className="bg-white rounded-xl border border-cdmu-gray-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+    <div className="glass-card rounded-2xl p-4 hover:shadow-apple-lg transition-all duration-300">
       <div className="flex items-center justify-between mb-1">
         <h3 className="text-xs font-semibold text-cdmu-gray-700">{kpi.label}</h3>
-        <span className="text-[9px] text-white bg-cdmu-blue px-1.5 py-0.5 rounded-full font-medium">
+        <span className="text-[9px] text-white bg-cdmu-blue px-2 py-0.5 rounded-full font-semibold shadow-sm">
           {kpi.target_year}
         </span>
       </div>
@@ -127,38 +124,32 @@ function KPICard({ kpi }: { kpi: KPI }) {
       <div className="flex items-center justify-between mt-2 px-2">
         <div className="text-center">
           <div className="text-[10px] text-cdmu-gray-500 uppercase tracking-wider">Baseline</div>
-          <div className="text-sm font-bold text-cdmu-red">
-            {formatValue(kpi.baseline, kpi.unit)}
-          </div>
-          <div className="text-[10px] text-cdmu-gray-400">{kpi.baseline_year}</div>
+          <div className="text-sm font-bold text-cdmu-red">{formatValue(kpi.baseline, kpi.unit)}</div>
+          <div className="text-[10px] text-cdmu-gray-500">{kpi.baseline_year}</div>
         </div>
         <div className="flex-1 mx-3 flex items-center">
-          <div className="flex-1 h-px bg-cdmu-gray-300" />
+          <div className="flex-1 h-px bg-cdmu-gray-300/50" />
           <svg className="w-4 h-4 text-cdmu-green mx-1" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
           </svg>
-          <div className="flex-1 h-px bg-cdmu-gray-300" />
+          <div className="flex-1 h-px bg-cdmu-gray-300/50" />
         </div>
         <div className="text-center">
           <div className="text-[10px] text-cdmu-gray-500 uppercase tracking-wider">Target</div>
-          <div className="text-sm font-bold text-cdmu-green">
-            {formatValue(kpi.target, kpi.unit)}
-          </div>
-          <div className="text-[10px] text-cdmu-gray-400">{kpi.target_year}</div>
+          <div className="text-sm font-bold text-cdmu-green">{formatValue(kpi.target, kpi.unit)}</div>
+          <div className="text-[10px] text-cdmu-gray-500">{kpi.target_year}</div>
         </div>
       </div>
 
       {kpi.breakdown && (
-        <div className="mt-3 pt-3 border-t border-cdmu-gray-100">
+        <div className="mt-3 pt-3 border-t border-cdmu-gray-200/40">
           <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
             {Object.entries(kpi.breakdown).map(([key, val]) => (
               <div key={key} className="flex items-center justify-between text-xs">
-                <span className="text-cdmu-gray-500 capitalize truncate mr-1">
-                  {key.replace(/_/g, " ")}
-                </span>
+                <span className="text-cdmu-gray-500 capitalize truncate mr-1">{key.replace(/_/g, " ")}</span>
                 <span className="font-medium text-cdmu-gray-700 whitespace-nowrap">
                   <span className="text-cdmu-red">{val.baseline}{kpi.unit === "%" ? "%" : ""}</span>
-                  {" "}→{" "}
+                  {" → "}
                   <span className="text-cdmu-green">{val.target}{kpi.unit === "%" ? "%" : ""}</span>
                 </span>
               </div>
@@ -174,10 +165,8 @@ export default memo(function KPIScorecard({ kpis }: { kpis: KPI[] }) {
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-3">
-        <img src="/logos/flag.png" alt="" className="w-6 h-4 rounded-sm" />
-        <h2 className="text-lg font-semibold text-cdmu-green-dark">
-          Compact Targets
-        </h2>
+        <img src="/logos/flag.png" alt="" className="w-6 h-4 rounded-sm shadow-sm" />
+        <h2 className="text-lg font-semibold text-cdmu-gray-900 tracking-tight">Compact Targets</h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {kpis.map((kpi) => (

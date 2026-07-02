@@ -63,7 +63,7 @@ export default function MilestoneTimeline() {
     <div className="space-y-4">
       <h2 className="text-lg font-semibold text-cdmu-navy">Key Milestones</h2>
 
-      <div className="bg-white rounded-xl border border-cdmu-gray-200 p-5">
+      <div className="glass-card rounded-2xl p-5">
         <div className="relative">
           <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-cdmu-gray-200" />
 
