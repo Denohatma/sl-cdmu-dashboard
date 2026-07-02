@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function AdminPage() {
   const [password, setPassword] = useState("");
@@ -122,12 +123,12 @@ export default function AdminPage() {
           <h1 className="text-white font-bold">CDMU Admin</h1>
           <span className="text-white/50 text-sm">Data Management</span>
         </div>
-        <a
+        <Link
           href="/"
           className="text-white/70 text-sm hover:text-white transition-colors"
         >
           Back to Dashboard
-        </a>
+        </Link>
       </header>
 
       <div className="max-w-4xl mx-auto p-6">
