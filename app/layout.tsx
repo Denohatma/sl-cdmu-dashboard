@@ -36,7 +36,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="h-full overflow-hidden font-sans">{children}</body>
+      <body className="h-full font-sans">{children}</body>
     </html>
   );
 }
