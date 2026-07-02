@@ -1,0 +1,309 @@
+{
+  "pillars": [
+    {
+      "id": 1,
+      "name": "Expand Generation & Infrastructure",
+      "short": "Infrastructure",
+      "icon": "zap",
+      "color": "#F4A300",
+      "action_items": [
+        {
+          "id": "1.1",
+          "indicator": "Planning Unit in MOE strengthened",
+          "baseline": true,
+          "status": "in_progress",
+          "responsible": "MOE",
+          "actions": [
+            { "text": "Review organogram of MOE planning unit", "target_date": "2025-09", "status": "completed" },
+            { "text": "Approval of new organogram by EGCG", "target_date": "2025-09", "status": "in_progress" },
+            { "text": "Operationalize the Planning Unit", "target_date": "2026-01", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "1.2",
+          "indicator": "Transmission & Distribution Investment Plan developed",
+          "baseline": false,
+          "status": "not_started",
+          "responsible": "MOE Planning Unit",
+          "actions": [
+            { "text": "Draft T&D Investment Plan aligned with IRP", "target_date": "2026-12", "status": "not_started" },
+            { "text": "Investment Plan endorsed by Sector Steering Committee", "target_date": "2026-12", "status": "not_started" },
+            { "text": "Investment Plan approved by Cabinet", "target_date": "2027-02", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "1.3",
+          "indicator": "Integrated Resource Plan updated",
+          "baseline": true,
+          "status": "in_progress",
+          "responsible": "MOE",
+          "actions": [
+            { "text": "Procure planning software for Planning Unit", "target_date": "2026-01", "status": "not_started" },
+            { "text": "Review and update IRP (2021-2040)", "target_date": "2026-04", "status": "not_started" },
+            { "text": "Energy Sector Steering Committee endorses updated IRP", "target_date": "2026-05", "status": "not_started" },
+            { "text": "Secure Cabinet approval of IRP", "target_date": "2026-05", "status": "not_started" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Regional Integration",
+      "short": "Regional",
+      "icon": "globe",
+      "color": "#2C8C99",
+      "action_items": [
+        {
+          "id": "2.1",
+          "indicator": "CLSG power off-take increased",
+          "baseline": true,
+          "status": "in_progress",
+          "responsible": "MOE/EGTC",
+          "actions": [
+            { "text": "Secure technical assistance for regional power negotiations", "target_date": "2025-09", "status": "in_progress" },
+            { "text": "Negotiate and sign new PPAs with regional suppliers", "target_date": "2026-04", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "2.2",
+          "indicator": "Harmonized transmission pricing adopted",
+          "baseline": false,
+          "status": "not_started",
+          "responsible": "EWRC/WAPP",
+          "actions": [
+            { "text": "Develop cost-reflective regional power trade model", "target_date": "2026-01", "status": "not_started" },
+            { "text": "EWRC implements harmonized national tariff", "target_date": "2026-01", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "2.3",
+          "indicator": "Grid Code harmonized with regional code",
+          "baseline": true,
+          "status": "in_progress",
+          "responsible": "EWRC",
+          "actions": [
+            { "text": "Align Grid Code with WAPP Regional Grid Code", "target_date": "2025-12", "status": "in_progress" },
+            { "text": "Adoption by Energy Sector Steering Committee", "target_date": "2026-01", "status": "not_started" },
+            { "text": "Publish grid code on EWRC website", "target_date": "2026-02", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "2.4",
+          "indicator": "Cross-border power procurement framework",
+          "baseline": false,
+          "status": "not_started",
+          "responsible": "GoSL",
+          "actions": [
+            { "text": "Develop framework", "target_date": "2028-12", "status": "not_started" },
+            { "text": "Secure Cabinet approval", "target_date": "2029-01", "status": "not_started" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "DRE & Clean Cooking",
+      "short": "Last Mile",
+      "icon": "sun",
+      "color": "#27AE60",
+      "action_items": [
+        {
+          "id": "3.1",
+          "indicator": "Energy Transition & Green Growth Investment Plan adopted",
+          "baseline": true,
+          "status": "in_progress",
+          "responsible": "Cabinet",
+          "actions": [
+            { "text": "Secure cabinet approval of the Plan", "target_date": "2025-09", "status": "in_progress" }
+          ]
+        },
+        {
+          "id": "3.2",
+          "indicator": "Energy Policy updated",
+          "baseline": true,
+          "status": "not_started",
+          "responsible": "MOE",
+          "actions": [
+            { "text": "Update and consolidate RE and EE Policies", "target_date": "2026-01", "status": "not_started" },
+            { "text": "Secure cabinet approval of updated Policy", "target_date": "2026-03", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "3.3",
+          "indicator": "Mini Grid Regulation adopted",
+          "baseline": true,
+          "status": "in_progress",
+          "responsible": "Parliament",
+          "actions": [
+            { "text": "MG Regulation laid in Parliament and approved", "target_date": "2025-09", "status": "in_progress" },
+            { "text": "Adopt Multi-Year Tariff framework for mini grids", "target_date": "2025-09", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "3.4",
+          "indicator": "National Clean Cooking Strategy adopted",
+          "baseline": false,
+          "status": "not_started",
+          "responsible": "CCDU",
+          "actions": [
+            { "text": "Government adopts National Clean Cooking Strategy", "target_date": "2025-09", "status": "not_started" },
+            { "text": "CCDU operational with strategy and action plan", "target_date": "2026-04", "status": "not_started" },
+            { "text": "Establish standards with Standards Bureau", "target_date": "2026-09", "status": "not_started" },
+            { "text": "Develop subsidy strategy implementation", "target_date": "2026-01", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "3.5",
+          "indicator": "Rural Electrification Agency established",
+          "baseline": false,
+          "status": "not_started",
+          "responsible": "MOE",
+          "actions": [
+            { "text": "Draft Bill establishing REA", "target_date": "2026-04", "status": "not_started" },
+            { "text": "Secure Cabinet Approval of Bill", "target_date": "2026-12", "status": "not_started" },
+            { "text": "Secure Parliamentary ratification", "target_date": "2027-03", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "3.6",
+          "indicator": "M&E program adopted for access tracking",
+          "baseline": false,
+          "status": "not_started",
+          "responsible": "MOE",
+          "actions": [
+            { "text": "Adopt M&E program using Multi-Tier Framework", "target_date": "2026-01", "status": "not_started" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Private Sector Participation",
+      "short": "Private Sector",
+      "icon": "briefcase",
+      "color": "#2471A3",
+      "action_items": [
+        {
+          "id": "4.1",
+          "indicator": "IPP Procurement Framework updated",
+          "baseline": true,
+          "status": "in_progress",
+          "responsible": "MOE",
+          "actions": [
+            { "text": "Review and update IPP framework", "target_date": "2026-12", "status": "not_started" },
+            { "text": "Committee to review generation pipeline", "target_date": "2025-12", "status": "in_progress" },
+            { "text": "Capacity needs assessment for MOE", "target_date": "2026-02", "status": "not_started" },
+            { "text": "Secure advisory services for IPP framework", "target_date": "2026-03", "status": "not_started" },
+            { "text": "Undertake procurement of new generation projects", "target_date": "2027-03", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "4.2",
+          "indicator": "Risk insurance instruments adopted",
+          "baseline": false,
+          "status": "not_started",
+          "responsible": "GoSL",
+          "actions": [
+            { "text": "Identify ATIDI and MIGA risk insurance opportunities", "target_date": "2025-09", "status": "not_started" },
+            { "text": "Submit membership criteria evidence", "target_date": "2026-06", "status": "not_started" },
+            { "text": "Mobilize resources for membership", "target_date": "2026-12", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "4.3",
+          "indicator": "Solar mini-grid sustainability via RBF",
+          "baseline": true,
+          "status": "in_progress",
+          "responsible": "MOE/Partners",
+          "actions": [
+            { "text": "Implement RBF program for solar mini-grids", "target_date": "2025-09", "status": "in_progress" },
+            { "text": "Set up RBF governance structure", "target_date": "2026-03", "status": "not_started" },
+            { "text": "Secure funding and disbursement mechanism", "target_date": "2026-12", "status": "not_started" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Utility Strengthening & Financial Viability",
+      "short": "Utility Reform",
+      "icon": "building",
+      "color": "#E74C3C",
+      "action_items": [
+        {
+          "id": "5.1",
+          "indicator": "National Electricity Act reviewed",
+          "baseline": true,
+          "status": "not_started",
+          "responsible": "GoSL",
+          "actions": [
+            { "text": "Review of Electricity Act 2011 (as amended 2018)", "target_date": "2026-04", "status": "not_started" },
+            { "text": "Secure Cabinet and Parliamentary approval", "target_date": "2026-09", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "5.2",
+          "indicator": "EWRC capacity strengthened",
+          "baseline": true,
+          "status": "not_started",
+          "responsible": "EWRC",
+          "actions": [
+            { "text": "Capacity assessment of EWRC", "target_date": "2026-03", "status": "not_started" },
+            { "text": "Capacity building plan implementation", "target_date": "2026-06", "status": "not_started" },
+            { "text": "Adopt Multi-Year Tariff Order for on-grid", "target_date": "2026-04", "status": "not_started" },
+            { "text": "Commence MYTO implementation (2026-2030)", "target_date": "2026-04", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "5.3",
+          "indicator": "Sector-wide Collection Account operationalized",
+          "baseline": true,
+          "status": "in_progress",
+          "responsible": "GoSL",
+          "actions": [
+            { "text": "Develop updated Collection Account manual", "target_date": "2025-09", "status": "in_progress" },
+            { "text": "Cabinet approval of CA manual", "target_date": "2025-10", "status": "not_started" },
+            { "text": "Appoint Independent Agent for Collections Account", "target_date": "2025-10", "status": "not_started" },
+            { "text": "Select and operationalize collection account bank", "target_date": "2025-12", "status": "not_started" },
+            { "text": "Monthly online publications on collections account", "target_date": "2026-03", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "5.4",
+          "indicator": "Sierra Leone Energy Fund established",
+          "baseline": false,
+          "status": "not_started",
+          "responsible": "GoSL",
+          "actions": [
+            { "text": "Develop Legal Framework for the Fund", "target_date": "2026-12", "status": "not_started" },
+            { "text": "Earmark revenue streams for the Fund", "target_date": "2026-12", "status": "not_started" },
+            { "text": "National and international stakeholder consultations", "target_date": "2027-03", "status": "not_started" },
+            { "text": "Draft Policy submitted to Cabinet", "target_date": "2027-06", "status": "not_started" },
+            { "text": "Secure Parliamentary ratification", "target_date": "2027-12", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "5.5",
+          "indicator": "OM&M Concessionaire for EDSA procured",
+          "baseline": false,
+          "status": "in_progress",
+          "responsible": "GoSL",
+          "actions": [
+            { "text": "Complete procurement process for Concession", "target_date": "2025-12", "status": "in_progress" },
+            { "text": "Implementation of Concession commences", "target_date": "2026-03", "status": "not_started" }
+          ]
+        },
+        {
+          "id": "5.6",
+          "indicator": "PPA between EDSA and EGTC revised",
+          "baseline": true,
+          "status": "not_started",
+          "responsible": "EDSA/EGTC",
+          "actions": [
+            { "text": "Comprehensive review and tariff update of EDSA-EGTC PPA", "target_date": "2026-01", "status": "not_started" }
+          ]
+        }
+      ]
+    }
+  ]
+}

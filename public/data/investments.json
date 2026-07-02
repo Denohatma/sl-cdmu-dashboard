@@ -1,0 +1,64 @@
+{
+  "last_updated": "2026-07-01",
+  "total_required": 2245000000,
+  "public_total": 835000000,
+  "private_total": 1410000000,
+  "by_sector": [
+    { "sector": "Generation", "public": 25000000, "private": 955000000, "total": 980000000 },
+    { "sector": "Transmission", "public": 300000000, "private": 150000000, "total": 450000000 },
+    { "sector": "On-Grid Distribution", "public": 300000000, "private": 50000000, "total": 350000000 },
+    { "sector": "Off-Grid Last Mile", "public": 160000000, "private": 165000000, "total": 325000000 },
+    { "sector": "Clean Cooking", "public": 10000000, "private": 90000000, "total": 100000000 },
+    { "sector": "Institutional", "public": 40000000, "private": 0, "total": 40000000 }
+  ],
+  "by_partner": [
+    {
+      "name": "Millennium Challenge Corporation",
+      "short": "MCC",
+      "committed": 494869000,
+      "disbursed": 0,
+      "timeline": "2024-2032",
+      "projects": ["Energy Compact — Transmission Backbone, Distribution & Access, Power Sector Reform"]
+    },
+    {
+      "name": "World Bank",
+      "short": "WB",
+      "committed": 216250000,
+      "disbursed": 0,
+      "timeline": "2014-2026",
+      "projects": ["ESLEAP", "RESPITE", "ESURP", "ESURP Additional Financing", "ESLEAP Feasibility Studies", "Transaction Advisory"]
+    },
+    {
+      "name": "Indian Exim Bank",
+      "short": "EXIM",
+      "committed": 91000000,
+      "disbursed": 0,
+      "timeline": "2019-2026",
+      "projects": ["225 kV Double Circuit Transmission & Substations"]
+    },
+    {
+      "name": "European Union",
+      "short": "EU",
+      "committed": 50500000,
+      "disbursed": 0,
+      "timeline": "2023-2029",
+      "projects": ["Transformational Energy Access to Sierra Leone — 8 green mini-grids"]
+    },
+    {
+      "name": "FCDO/AfDB",
+      "short": "FCDO",
+      "committed": 40000000,
+      "disbursed": 0,
+      "timeline": "2019-2025",
+      "projects": ["Bo-Kenema Transmission & Distribution 33kV Rehabilitation"]
+    },
+    {
+      "name": "Government of Sierra Leone",
+      "short": "GoSL",
+      "committed": 43000000,
+      "disbursed": 14200000,
+      "timeline": "2021-ongoing",
+      "projects": ["7 Towns Electrification (Diesel + T&D)"]
+    }
+  ]
+}

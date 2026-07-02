@@ -1,0 +1,62 @@
+{
+  "last_updated": "2026-07-01",
+  "targets": [
+    {
+      "id": "electricity_access",
+      "label": "Electricity Access Rate",
+      "unit": "%",
+      "baseline": 36,
+      "baseline_year": 2025,
+      "current": 36,
+      "target": 78,
+      "target_year": 2030,
+      "breakdown": {
+        "off_grid": { "baseline": 15, "target": 50 },
+        "on_grid": { "baseline": 21, "target": 28 }
+      }
+    },
+    {
+      "id": "clean_cooking",
+      "label": "Clean Cooking Access",
+      "unit": "%",
+      "baseline": 1.5,
+      "baseline_year": 2025,
+      "current": 1.5,
+      "target": 25,
+      "target_year": 2030,
+      "breakdown": {
+        "bioethanol": { "baseline": 0, "target": 2.0 },
+        "electricity": { "baseline": 0, "target": 0.5 },
+        "charcoal_improved": { "baseline": 0, "target": 10 },
+        "fire_improved": { "baseline": 0, "target": 25 },
+        "lpg": { "baseline": 0.9, "target": 10 }
+      }
+    },
+    {
+      "id": "renewable_share",
+      "label": "Renewable Energy Share",
+      "unit": "%",
+      "baseline": 46,
+      "baseline_year": 2025,
+      "current": 46,
+      "target": 52,
+      "target_year": 2030,
+      "breakdown": {
+        "solar": { "baseline": 19, "target": 34 },
+        "hydro": { "baseline": 22, "target": 17 },
+        "biomass": { "baseline": 5, "target": 1 }
+      }
+    },
+    {
+      "id": "private_capital",
+      "label": "Private Capital Mobilized",
+      "unit": "USD",
+      "baseline": 615000000,
+      "baseline_year": 2025,
+      "current": 615000000,
+      "target": 1400000000,
+      "target_year": 2030
+    }
+  ],
+  "history": []
+}

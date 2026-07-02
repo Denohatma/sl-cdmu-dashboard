@@ -1,0 +1,61 @@
+{
+  "last_updated": "2026-07-01",
+  "pillars": {
+    "1": {
+      "name": "Expand & Modernize Infrastructure",
+      "metrics": [
+        { "label": "Household Demand (Constrained)", "value": 59.3, "unit": "MW", "date": "2024" },
+        { "label": "Commercial Demand (Constrained)", "value": 30, "unit": "MW", "date": "2024" },
+        { "label": "Large Customers (Constrained)", "value": 18.6, "unit": "MW", "date": "2024" },
+        { "label": "Mining Demand", "value": 148.6, "unit": "MW", "date": "2023" },
+        { "label": "Energy Produced Annually", "value": 596056.35, "unit": "MWh", "date": "2024" },
+        { "label": "End User Tariff", "value": 21, "unit": "USc/kWh", "date": "2024" },
+        { "label": "Average Cost of Generation", "value": 14, "unit": "USc/kWh", "date": "2024" },
+        { "label": "Transmission Network — 161 kV", "value": 204, "unit": "km", "date": "2024" },
+        { "label": "Transmission Network — 225 kV CLSG", "value": 530, "unit": "km", "date": "2024" },
+        { "label": "Transmission Network — 66 kV", "value": 72, "unit": "km", "date": "2024" },
+        { "label": "Distribution — 66 kV Lines", "value": 55.65, "unit": "km", "date": "2024" },
+        { "label": "Distribution — 33 kV Lines", "value": 99.4, "unit": "km", "date": "2024" },
+        { "label": "Distribution — 11 kV Lines", "value": 776, "unit": "km", "date": "2024" },
+        { "label": "Distribution — LV Lines", "value": 1987, "unit": "km", "date": "2024" }
+      ]
+    },
+    "2": {
+      "name": "Regional Energy Integration",
+      "metrics": [
+        { "label": "Energy Imported Annually", "value": 95799.24, "unit": "MWh", "date": "2024" },
+        { "label": "Arrears Owed for Imports", "value": 26000000, "unit": "USD", "date": "2024" },
+        { "label": "Average Import Cost", "value": 14, "unit": "USc/kWh", "date": "2024" },
+        { "label": "Share of Renewable Energy in Mix", "value": 46, "unit": "%", "date": "2025" }
+      ]
+    },
+    "3": {
+      "name": "DRE & Clean Cooking",
+      "metrics": [
+        { "label": "Mini-Grid Connections", "value": 20000, "unit": "connections", "date": "2024" },
+        { "label": "Clean Cooking Connections/Appliances", "value": 150000, "unit": "units", "date": "2024" },
+        { "label": "Solar Home Systems (last 3 years)", "value": 27400, "unit": "systems", "date": "2024" }
+      ]
+    },
+    "4": {
+      "name": "Private Sector Participation",
+      "metrics": [
+        { "label": "Total Investment Required to Meet 2030 Goals", "value": 2245000000, "unit": "USD", "date": "2025" },
+        { "label": "Total Private Investment Needed", "value": 1400000000, "unit": "USD", "date": "2025" }
+      ]
+    },
+    "5": {
+      "name": "Utility Viability & Governance",
+      "metrics": [
+        { "label": "EDSA Losses (Commercial & Technical)", "value": 53.2, "unit": "%", "date": "2024" },
+        { "label": "EDSA Collection Ratio (Postpaid)", "value": 0.57, "unit": "ratio", "date": "2024" },
+        { "label": "Total Subsidy — 2023", "value": 20944390, "unit": "USD", "date": "2023" },
+        { "label": "Total Subsidy — 2024", "value": 40160100, "unit": "USD", "date": "2024" },
+        { "label": "End User Tariff", "value": 21, "unit": "USc/kWh", "date": "2024" },
+        { "label": "Arrears by Government/Public Entities", "value": 762266130, "unit": "NLe", "date": "2024" },
+        { "label": "New On-Grid Connections", "value": 1965, "unit": "connections", "date": "2024" },
+        { "label": "Metered Customers", "value": 345858, "unit": "customers", "date": "2025" }
+      ]
+    }
+  }
+}
